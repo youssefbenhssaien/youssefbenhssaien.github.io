@@ -494,10 +494,14 @@ html, body {
 }
 
 /* Section: Certifications*/
-.flex-center {
+.flex {
     display: flex;
-    flex-direction: column;
+}
+.flex-center {
     align-items: center;
+}
+.flex-column {
+    flex-direction: column;
 }
 .certifications img, .contact img {
     height: 100px;
