@@ -85,6 +85,4 @@ $(function() {
                 return false;
             }
     });
-
-    $('years_experience').attr('data-to', Math.floor((Date.now() - new Date('03-03-2014'))/1000/60/60/24/365));
 });

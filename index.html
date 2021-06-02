@@ -75,8 +75,8 @@
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <h1>Youssef BENHSSAIEN</h1>
-                        <p class="job-title">Senior Full Stack PHP/Javascript Developer</p>
-                        <p>Hello! I'm Youssef, a full stack developer, a PHP enthusiast, and a guy slighty obsessed for code quality.</p>
+                        <p class="job-title">{{ title }}</p>
+                        <p>{{ introduction }}</p>
                         <div class="clearfix visible-xxs"></div>
                         <a href="https://www.linkedin.com/in/youssefbenhssaien/#experience-section" class="btn btn-border" target="_blank">My experiences</a>
                         <a href="https://www.visualcv.com/pdfs/999273/" class="btn btn-fill" target="_blank" download>Download my cv</a>
@@ -92,27 +92,8 @@
                         <h3>What i do</h3>
                         <img src="assets/img/lines.svg" class="img-lines" alt="lines">
                     </div>
-                    <div class="col-sm-4">
-                        <div class="service">
-                            <img src="assets/img/back-end.svg" alt="Back End Developer">
-                            <h4>Back-end</h4>
-                            <p>Utilising php frameworks such as Symfony or creating bespoke code, I've written services supporting thousands of users, including REST APIs, e-learning applications and more.</p>
-                        </div><!-- /.service -->
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="service">
-                            <img src="assets/img/front-end.svg" alt="Front End Developer">
-                            <h4>Front-end</h4>
-                            <p>As a javascript developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript frameworks such as VueJs/ReactJs/Angular</p>
-                        </div><!-- /.service -->
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="service">
-                            <img src="assets/img/consultancy.svg" alt="Coding">
-                            <h4>Problem Solving</h4>
-                            <p>As a senior developer, solving problems needs more than writing code and getting results.
-                                <br />Design patterns, software architecture, performance, budget, target and understanding the big picture what yield results</p>
-                        </div><!-- /.service -->
+                    <div class="col-sm-4" v-for="row in services">
+                        <service :label="row.label" :description="row.description" :img="row.img" :alt="row.alt" />
                     </div>
                 </div>
             </div>
@@ -127,29 +108,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="flex flex-column flex-center col-sm-3 col-xs-12">
-                        <img class="img-responsive" src="/assets/img/certif/certif-php.gif" />
-                        <h4><a href="https://www.zend-zce.com/en/yellow-pages/ZEND032239" target="_blank">
-                            Zend Certified PHP Engineer (2017-PHP)
-                        </a></h4>
-                    </div>
-                    <div class="flex flex-column flex-center col-sm-3 col-xs-12">
-                        <img class="img-responsive" src="/assets/img/certif/certif-symfony.png" />
-                        <h4><a href="https://connect.symfony.com/profile/moghreb" target="_blank">
-                            Symfony 5 Certified Developer
-                        </a></h4>
-                    </div>
-                    <div class="flex flex-column flex-center col-sm-3 col-xs-12">
-                        <img class="img-responsive" src="/assets/img/certif/certif-psmi.svg" />
-                        <h4><a href="https://www.scrum.org/user/345856" target="_blank">
-                            The Professional Scrum Master I (PSM I) 
-                        </a></h4>
-                    </div>
-                    <div class="flex flex-column flex-center col-sm-3 col-xs-12">
-                        <img class="img-responsive" src="/assets/img/certif/certif-gitlab.png" />
-                        <h4><a href="https://badgr.com/public/assertions/ccH_dcC1T7eFD2MuGsu6_Q?identity__email=youssef.benhssaien@gmail.com" target="_blank">
-                            GitLab Certified Associate
-                        </a></h4>
+                    <div class="flex flex-column flex-center col-sm-3 col-xs-12" v-for="row in certifs">
+                        <contact :target="row.href" :img="row.img" :label="row.label" />
                     </div>
                 </div>
             </div>
@@ -162,47 +122,8 @@
                     <img src="assets/img/lines.svg" class="img-lines" alt="lines">
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="skill">
-                            <h4>PHP</h4>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" data-transitiongoal="90"></div><!-- /.progress-bar -->
-                            </div><!-- /.progress -->
-                        </div><!-- /.skill -->
-                        <div class="skill">
-                            <h4>MySQL</h4>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" data-transitiongoal="70"></div><!-- /.progress-bar -->
-                            </div><!-- /.progress -->
-                        </div><!-- /.skill -->
-                    </div>
-                    <div class="col-md-4">
-                        <div class="skill">
-                            <h4>Javascript</h4>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" data-transitiongoal="70"></div><!-- /.progress-bar -->
-                            </div><!-- /.progress -->
-                        </div><!-- /.skill -->
-                        <div class="skill">
-                            <h4>Git</h4>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" data-transitiongoal="70"></div><!-- /.progress-bar -->
-                            </div><!-- /.progress -->
-                        </div><!-- /.skill -->
-                    </div>
-                    <div class="col-md-4">
-                        <div class="skill">
-                            <h4>HTML/CSS</h4>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" data-transitiongoal="70"></div><!-- /.progress-bar -->
-                            </div><!-- /.progress -->
-                        </div><!-- /.skill -->
-                        <div class="skill">
-                            <h4>Docker</h4>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" data-transitiongoal="45"></div><!-- /.progress-bar -->
-                            </div><!-- /.progress -->
-                        </div><!-- /.skill -->
+                    <div class="col-md-4" v-for="row in skills">
+                        <skill :label="row.label" :count="row.count">
                     </div>
                 </div>
             </div>
@@ -215,75 +136,8 @@
                     <img src="assets/img/lines.svg" class="img-lines" alt="lines">
                 </div>
                 <div class="row enterprises-row">
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://atos.net" target="_blank">
-                            <img src="https://atos.net/wp-content/themes/atos/images/atos-logo-menu-bar.png" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://www.capgemini.com" target="_blank">
-                            <img src="https://www.capgemini.com/wp-content/themes/capgemini-komposite/assets/images/logo.svg" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://www.avito.ma" target="_blank">
-                            <img src="https://www.avito.ma/img/logo-rbnd.png" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://www.cgi.com" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/CGI_logo.svg/1200px-CGI_logo.svg.png" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://www.open.global/" target="_blank">
-                            <img src="https://www.open.global/sites/all/themes/opengroupe_t/assets/img/logo_@2x.png" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://www.ausy.fr" target="_blank">
-                            <img src="https://www.ausy.fr/sites/all/themes/ausy/logo.png" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://www.al-enterprise.com/" target="_blank">
-                            <img src="https://web-assets.al-enterprise.com/-/media/assets/internet/images/h-to-m/logo.png" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="https://www.laposte.fr/" target="_blank">
-                            <img src="https://www.laposte.fr/_ui/eboutique/images/fusion/logolp_part.svg" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://www.soprasteria.com/" target="_blank">
-                            <img src="https://www.soprasteria.com/ResourcePackages/Bootstrap4/assets/dist/logos/logo-soprasteria.png" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="https://www.docaposte.com/" target="_blank">
-                            <img src="https://www.docaposte.com/bundles/docapostcore/img/header/logo-docaposte.svg" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://www.groupama.com/fr/fiche/groupama-supports-et-services/" target="_blank">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQEacBVWwr6osw/company-logo_200_200/0/1619076541363?e=1630540800&v=beta&t=cW4xcO3YVdhfeM6dSqFjh2zFMJjSUDtyKb9ZmeHjVYI" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="https://bananacloud.fr/" target="_blank">
-                            <img src="https://bananacloud.fr/wp-content/uploads/2019/11/Banana_Cloud_digital-marketing_logo_basic-1.svg" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://www.fnac.com/" target="_blank">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQFbNeLrzFidQA/company-logo_200_200/0/1519865140136?e=1630540800&v=beta&t=majmEs_cI95r_HVoApKWytkfIAZLDGZIUPQffneZf4U" class="img-certif img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12 flex flex-center">
-                        <a href="https://www.orange.fr/" target="_blank">
-                            <img src="https://c.woopic.com/logo-orange.png" class="img-certif img-responsive" />
-                        </a>
+                    <div class="col-sm-3 col-xs-12 flex flex-center" v-for="row in enterprises">
+                        <enterprise :target="row.href" :img="row.img" />
                     </div>
                 </div>
             </div>
@@ -292,21 +146,8 @@
         <section class="site-section section-counters text-center">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-3 col-xs-12">
-                        <p id="years_experience" class="counter start" data-to="7" data-speed="2000">0</p>
-                        <h4>Years Experience</h4>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <p class="counter start" data-to="22" data-speed="2000">0</p>       
-                        <h4>professional Projects</h4>      
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <p class="counter start" data-to="16" data-speed="2000">0</p>
-                        <h4>Personal projects</h4>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <p class="counter start" data-to="3" data-speed="2000">0</p>
-                        <h4>Open source projects</h4>
+                    <div class="col-sm-3 col-xs-12" v-for="row in stats">
+                        <stat :count="row.count" :label="row.label" />
                     </div>
                 </div>
             </div>
@@ -321,69 +162,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="mailto:youssef.benhssaien@gmail.com" target="_blank">
-                            <div class="flex  flex-column flex-center">
-                                <img src="assets/img/social/gmail.png" class="img-certif img-responsive" />
-                                <h4>E-mail</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="https://www.linkedin.com/in/youssefbenhssaien" target="_blank">
-                            <div class="flex  flex-column flex-center">
-                                <img src="assets/img/social/linkedin.png" class="img-certif img-responsive" />
-                                <h4>Linkedin</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="https://github.com/ybenhssaien" target="_blank">
-                            <div class="flex  flex-column flex-center">
-                                <img src="assets/img/social/github.png" class="img-certif img-responsive" />
-                                <h4>Github</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="https://youssefbenhssaien.medium.com" target="_blank">
-                            <div class="flex  flex-column flex-center">
-                                <img src="assets/img/social/medium.png" class="img-certif img-responsive" />
-                                <h4>Medium</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="https://stackoverflow.com/users/story/7326498" target="_blank">
-                            <div class="flex  flex-column flex-center">
-                                <img src="assets/img/social/stack-overflow.png" class="img-certif img-responsive" />
-                                <h4>Stackoverflow</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="https://twitter.com/ysfbenhssaien" target="_blank">
-                            <div class="flex  flex-column flex-center">
-                                <img src="assets/img/social/twitter.png" class="img-certif img-responsive" />
-                                <h4>Twitter</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="https://dev.to/ybenhssaien" target="_blank">
-                            <div class="flex  flex-column flex-center">
-                                <img src="assets/img/social/devto.png" class="img-certif img-responsive" />
-                                <h4>Dev.to</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <a href="https://www.instagram.com/youssef.benhssaien/" target="_blank">
-                            <div class="flex  flex-column flex-center">
-                                <img src="assets/img/social/instagram.png" class="img-certif img-responsive" />
-                                <h4>Instagram</h4>
-                            </div>
-                        </a>
+                    <div class="col-sm-3 col-xs-12" v-for="row in contacts">
+                        <contact :target="row.href" :img="row.img" :label="row.label" />
                     </div>
                 </div>
             </div>
@@ -413,11 +193,14 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@3.0.11"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="assets/js/skrollr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-progressbar/0.9.0/bootstrap-progressbar.min.js"></script>
     <script src="assets/js/jquery.countTo.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/components.js"></script>
 </body>
 </html>
