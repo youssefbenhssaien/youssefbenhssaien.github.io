@@ -1,6 +1,14 @@
 const data = {
     title: 'Senior Full Stack PHP/Javascript Developer',
     introduction: 'Hello! I\'m Youssef, a full stack developer, a PHP enthusiast, and a guy slighty obsessed for code quality.',
+    cvs: [
+        { label: 'EN', href: '/data/cv/cv_en.pdf', img: '/assets/img/lang/en.png' },
+        { label: 'FR', href: '/data/cv/cv_fr.pdf', img: '/assets/img/lang/fr.png' },
+    ],
+    experiences: [
+        { label: 'Linkedin', href: 'https://www.linkedin.com/in/youssefbenhssaien/#experience-section', img: '/assets/img/social/linkedin-16.png' },
+        { label: 'Stackoverflow', href: 'https://stackoverflow.com/users/story/7326498', img: '/assets/img/social/stack-overflow-16.png' },
+    ],
     services: [
         { label: 'Back-end', description: 'Utilising php frameworks such as Symfony or creating bespoke code, I\'ve written services supporting thousands of users, including REST APIs, e-learning applications and more.', img: 'assets/img/back-end.svg', alt: 'Back End Developer' },
         { label: 'Front-end', description: 'As a javascript developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript frameworks such as VueJs/ReactJs/Angular', img: 'assets/img/front-end.svg', alt: 'Front End Developer' },

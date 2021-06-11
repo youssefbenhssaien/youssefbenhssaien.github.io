@@ -60,8 +60,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="page-scroll"><a href="#main">About</a></li>
                         <li class="page-scroll"><a href="#certifications">Certifications</a></li>
-                        <li class="page-scroll"><a href="#portfolio">Enterprises</a></li>
                         <li class="page-scroll"><a href="#skills">Skills</a></li>
+                        <li class="page-scroll"><a href="#portfolio">Enterprises</a></li>
                         <li class="page-scroll"><a href="#contact">Contact</a></li>
                     </ul><!-- /.navbar-nav -->
                 </div><!-- /.navbar-collapse -->
@@ -78,8 +78,30 @@
                         <p class="job-title">{{ title }}</p>
                         <p>{{ introduction }}</p>
                         <div class="clearfix visible-xxs"></div>
-                        <a href="https://www.linkedin.com/in/youssefbenhssaien/#experience-section" class="btn btn-border" target="_blank">My experiences</a>
-                        <a href="https://www.visualcv.com/pdfs/999273/" class="btn btn-fill" target="_blank" download>Download my cv</a>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-border dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                My experiences <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li v-for="experience in experiences">
+                                    <a class="dropdown-item" :href="experience.href" target="_blank">
+                                        <img class="fa fa-lg" :src="experience.img" />  {{ experience.label }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-fill dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Download my cv <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li v-for="cv in cvs">
+                                    <a class="dropdown-item" :href="cv.href" target="_blank">
+                                        <img class="fa fa-lg" :src="cv.img" />  {{ cv.label }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
