@@ -41,7 +41,7 @@ const data = {
         { href: 'https://www.docaposte.com', img: '/assets/img/enterprises/docaposte.png' },
         { href: 'https://www.groupama.com/fr/fiche/groupama-supports-et-services', img: 'https://www.groupama.com/wp-content/themes/lp-theme/static/img/logo.png' },
         { href: 'https://bananacloud.fr', img: '/assets/img/enterprises/bananacloud.png' },
-        { href: 'https://www.fnac.com', img: 'https://fr.wikipedia.org/wiki/Fnac#/media/Fichier:Fnac_Logo.svg' },
+        { href: 'https://www.fnac.com', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Fnac_Logo.svg/1200px-Fnac_Logo.svg.png' },
         { href: 'https://www.orange.fr', img: 'https://c.woopic.com/logo-orange.png' },
     ],
     stats: [
