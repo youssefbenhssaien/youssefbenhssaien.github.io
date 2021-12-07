@@ -7,7 +7,7 @@ const data = {
     ],
     experiences: [
         { label: 'Linkedin', href: 'https://www.linkedin.com/in/youssefbenhssaien/#experience-section', img: '/assets/img/social/linkedin-16.png' },
-        { label: 'Stackoverflow', href: 'https://stackoverflow.com/users/story/7326498', img: '/assets/img/social/stack-overflow-16.png' },
+        { label: 'Stackoverflow', href: 'https://stackoverflow.com/story/youssef.benhssaien', img: '/assets/img/social/stack-overflow-16.png' },
     ],
     services: [
         { label: 'Back-end', description: 'Utilising php frameworks such as Symfony or creating bespoke code, I\'ve written services supporting thousands of users, including REST APIs, e-learning applications and more.', img: 'assets/img/back-end.svg', alt: 'Back End Developer' },
@@ -55,7 +55,7 @@ const data = {
         { label: 'Linkedin', img: 'assets/img/social/linkedin.png', href: 'https://www.linkedin.com/in/youssefbenhssaien' },
         { label: 'Github', img: 'assets/img/social/github.png', href: 'https://github.com/ybenhssaien' },
         { label: 'Medium', img: 'assets/img/social/medium.png', href: 'https://youssefbenhssaien.medium.com' },
-        { label: 'Stackoverflow', img: 'assets/img/social/stack-overflow.png', href: 'https://stackoverflow.com/users/story/7326498' },
+        { label: 'Stackoverflow', img: 'assets/img/social/stack-overflow.png', href: 'https://stackoverflow.com/story/youssef.benhssaien' },
         { label: 'Twitter', img: 'assets/img/social/twitter.png', href: 'https://twitter.com/ysfbenhssaien' },
         { label: 'Dev.to', img: 'assets/img/social/devto.png', href: 'https://dev.to/ybenhssaien' },
         { label: 'Instagram', img: 'assets/img/social/instagram.png',  href: 'https://www.instagram.com/youssef.benhssaien' },
