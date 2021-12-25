@@ -34,7 +34,7 @@ const data = {
         { href: 'https://www.avito.ma', img: 'https://www.avito.ma/img/logo-rbnd.png' },
         { href: 'https://www.cgi.com', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/CGI_logo.svg/1200px-CGI_logo.svg.png' },
         { href: 'https://www.open.global', img: 'https://www.open.global/sites/all/themes/opengroupe_t/assets/img/logo_@2x.png' },
-        { href: 'https://www.ausy.fr', img: 'https://www.ausy.fr/sites/all/themes/ausy/logo.png' },
+        { href: 'https://www.ausy.fr', img: '/assets/img/enterprises/ausy.png' },
         { href: 'https://www.al-enterprise.com', img: 'https://web-assets.al-enterprise.com/-/media/assets/internet/images/h-to-m/logo.png' },
         { href: 'https://www.laposte.fr', img: '/assets/img/enterprises/laposte.png' },
         { href: 'https://www.soprasteria.com', img: 'https://www.soprasteria.com/ResourcePackages/Bootstrap4/assets/dist/logos/logo-soprasteria.png' },
