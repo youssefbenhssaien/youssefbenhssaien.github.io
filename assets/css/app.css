@@ -1,0 +1,17 @@
+.experience-specification-row {
+    margin: 10px auto;
+}
+.experience-specification {
+    font-weight: bold;
+    font-size: medium;
+    margin: 5px 5px 5px auto;
+}
+
+.badge {
+    margin: 2px;
+}
+
+.company-logo {
+    width: 200px;
+    height: 30px;
+}
