@@ -298,7 +298,7 @@
 	}
 
 	.hero h1 {
-		font-size: 32px
+		font-size: 32px;
 		margin-bottom: 10px;
 	}
 
@@ -309,6 +309,9 @@
 
 	.hero img {
 		height: 360px
+	}
+	.photo-profile-container {
+		text-align: center;
 	}
 
 	/* SITEMAIN

@@ -152,6 +152,7 @@ html, body {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 75px;
     background-color: transparent;
     z-index: 5;
 }
@@ -211,20 +212,27 @@ html, body {
 ================================================== */
 .site-main {
     position: relative;
-    margin-bottom: 100px;
+    padding: 75px 0px 30px 0;
+    margin-top: 30px;
     background-color: #fff;
     z-index: 1;
 }
 /* site-section */
-.site-section {
-   padding-top: 120px;
-}
-
 .site-section h2,
 .site-section h3 {
     font-size: 36px;
     margin: 0;
     text-transform: uppercase;
+}
+
+.photo-profile-container {
+    text-align: right;
+}
+.photo-profile {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 5px rgb(0 0 0 / 30%);
 }
 
 .img-lines {
@@ -250,29 +258,12 @@ html, body {
     margin: 0 0 15px;
 }
 
-.progress {
-    height: 15px;
-    margin-bottom: 0;
-    border-radius: 0;
-    background-color: #dfdfdf;
-    box-shadow: none;
-}
-
-.progress-bar {
-    background-color: #212121;  
-}
-
 /* Section: Services */
-.section-services {
-    position: relative;
-    padding-top: 220px;
-}
-
 .section-services:before {
     content: '';
     background: url(../img/services-bg.jpg) no-repeat fixed center / cover;
     width: 100%;
-    height: 400px; 
+    height: 100%;
     position: absolute;
     left: 0;
     top: 0;
@@ -290,10 +281,10 @@ html, body {
 }
 
 .section-services .container {
-    padding: 120px 100px;
+    padding: 50px 100px;
     position: relative;
     background-color: #fff;
-    box-shadow: 0px 0px 40px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 40px 8px rgba(255, 255, 255, 0.4);
     z-index: 1;
 }
 
@@ -462,7 +453,7 @@ html, body {
     margin: 25px 0 0;
 }
 
-.site-section p.counter {
+.section-counters p.counter {
     font-size: 100px;
     font-weight: 300;
     color: #fff;

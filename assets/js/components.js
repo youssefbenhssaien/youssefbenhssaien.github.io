@@ -2,74 +2,6 @@ const app = Vue.createApp({
     data() {
         return data;
     },
-    computed: {
-        timelineElements () {
-            return this.reverseSortObjectByKeys({
-                ...this.experiences, 
-                ...this.certifications,
-                ...this.formations,
-            });
-        },
-        tagsFromExperiences() {
-            const categories = [];
-
-            // Extract all tags from experiences
-            const allCategories = Object
-            .values(this.experiences)
-            .map((experience) => Object.keys(experience.tags));
-
-            // Every tag contains an array of categories
-            for (category in allCategories) {
-                categories.push(...allCategories[category]);
-            }
-
-            // Return an unique array of categories
-            return categories.filter((v, i, a) => a.indexOf(v) === i);
-        },
-    },
-    methods: {
-        sortObjectByKeys(objectUnsorted) {
-            return Object.keys(objectUnsorted).sort().reduce(
-                (obj, key) => { 
-                    obj[key] = objectUnsorted[key]; 
-                    return obj;
-                }, 
-                {}
-            );
-        },
-        reverseSortObjectByKeys(objectUnsorted) {
-            return Object.keys(objectUnsorted).sort().reverse().reduce(
-                (obj, key) => { 
-                    obj[key] = objectUnsorted[key]; 
-                    return obj;
-                }, 
-                {}
-            );
-        },
-        skillsFromExperiences(category) {
-            const skills = {};
-
-            Object.values(this.experiences).forEach(function (experience) {
-                if (experience.type !== 'job' && experience.type !== 'freelance') {
-                    return;
-                }
-                for(const skillFromEntry in experience.tags[category]) {
-                    // Check if the skill is a key or value
-                    const skill = Number.parseInt(skillFromEntry) >= 0? experience.tags[category][skillFromEntry] : skillFromEntry; 
-
-                    // Initialise the skill count
-                    if (typeof skills[skill] === 'undefined') {
-                        skills[skill] = 0;
-                    }
-
-                    skills[skill]++;
-                }
-            });
-
-            // Sort skills by count
-            return Object.fromEntries(Object.entries(skills).sort().sort(([,a],[,b]) => a-b).reverse());
-        },
-    },
 });
 
 const timelineComponent = {
@@ -80,16 +12,16 @@ const timelineComponent = {
     <section id="cd-timeline" class="cd-container text-left p-xl-0 pb-xl-4">
         <div id="cd-timeline-head" class="row">
             <div class="col-6 pr-0">
-                <h6 class="border p-3 font-weight-bold text-center text-light bg-dark">
+                <h5 class="border p-3 font-weight-bold text-center text-light bg-dark">
                     <i class="fa fa-graduation-cap"></i> Formations & <i class="fa fa-award"></i> Certifications
                     <i class="fa fa-caret-down text-center"></i>
-                </h6>
+                </h5>
             </div>
             <div class="col-6 pl-0">
-                <h6 class="border p-3 font-weight-bold text-center text-light bg-dark">
+                <h5 class="border p-3 font-weight-bold text-center text-light bg-dark">
                     <i class="fa fa-code"></i> Professional Experience
                     <i class="fa fa-caret-down text-center"></i>
-                </h6>
+                </h5>
             </div>
         </div>
         <template v-for="element in elements">
@@ -154,7 +86,7 @@ const timelineElementComponent = {
             </div>
             <slot name="description">
                 <div v-if="description" class="mt-2">
-                    <h6 class="font-weight-bold">Description :</h6>
+                    <h6 class="font-weight-bold mr-1">Description :</h6>
                     <span>{{ description }}</span>
                 </div>
             </slot>
@@ -252,7 +184,7 @@ const timelineCertificationComponent = {
             <div class="text-center">
                 <img :src="certif.logo" style="width: 200px; height: 200px; margin-top: 5px" />
             </div>
-            <div class="text-center">
+            <div class="text-center mt-2">
                 <a class="btn btn-primary" :href="certif.url" target="__blank">
                     <i class="fa fa-share-square"></i> See credential
                 </a>
@@ -291,95 +223,71 @@ const timelineFormationComponent = {
 };
 app.component('timeline-formation', timelineFormationComponent);
 
-const serviceComponent = {
-    props:  {
-        img: String,
-        alt: String,
-        label: String,
-        description: String,
+const resumeSectionComponent = {
+    data() {
+        return data;
     },
-    template: `<div class="service">
-            <img :src="img" alt="{{ alt }}">
-            <h4>{{ label }}</h4>
-            <p v-html="description"></p>
-        </div>`
-};
-app.component('service', serviceComponent);
-
-const certifComponent = {
-    props:  {
-        target: String,
-        img: String,
-        label: String,
-    },
-    template: `<img class="img-responsive" :src="imgg" />
-        <h4><a :href="target" target="_blank">
-            {{ label }}
-        </a></h4>`
-};
-app.component('certif', certifComponent);
-
-const skillComponent = {
-    props:  {
-        count: Number,
-        label: String,
-    },
-    template: `<button class="btn btn-secondary btn-sm m-1" :title="count+' professional experiences'">{{ label }}</button>`,
-};
-app.component('skill', skillComponent);
-
-const skillTechnicalComponent = {
-    props:  {
-        skills: Object,
-        minCount: {
-            type: Number,
-            required: false,
-            default: 1,
+    computed: {
+        timelineElements () {
+            return this.reverseSortObjectByKeys({
+                ...this.experiences,
+                ...this.certifications,
+                ...this.formations,
+            });
         },
-        maxCount: {
-            type: Number,
-            required: false,
-            default: Number.MAX_SAFE_INTEGER,
+    },
+    methods: {
+        reverseSortObjectByKeys(objectUnsorted) {
+            return Object.keys(objectUnsorted).sort().reverse().reduce(
+                (obj, key) => {
+                    obj[key] = objectUnsorted[key];
+                    return obj;
+                },
+                {}
+            );
         },
+    },
+    mounted() {
+        $(".section-counters .start").each(function() {
+            if(!($(this).hasClass('counting'))) {
+                $(this).addClass('counting');
+                $(this).countTo();
+            }
+        });
     },
     template: `
-    <template v-for="(count, label) in skills">
-        <skill :label="label" :count="count" v-if="count >= minCount && count <= maxCount"></skill>
-    </template>
+        <section id="experience" class="site-section text-center mt-n5">
+            <div class="section-counters mx-0">
+                <div class="row no-gutters">
+                    <div class="col-sm-3 col-xs-12" v-for="row in stats">
+                        <div>
+                            <p class="counter start" :data-to="row.count" data-speed="2000">0</p>
+                            <h4>{{ row.label }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h3>My Formations & Experience</h3>
+                        <img src="assets/img/lines.svg" class="img-lines" alt="lines">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <cv-download :cvs="cvs" />
+                    </div>
+                    <div class="col-md-12">
+                        <timeline :elements="timelineElements" />
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.section-form -->
     `,
 };
-app.component('skill-technical', skillTechnicalComponent);
-
-const statComponent = {
-    props:  {
-        count: Number,
-        speed: {
-            type: Number,
-            default: 2000,
-        },
-        label: String,
-    },
-    template: `<div>
-            <p class="counter start" :data-to="count" :data-speed="speed">0</p>
-            <h4>{{ label }}</h4>
-        </div>`,
-};
-app.component('stat', statComponent);
-
-const contactComponent = {
-    props:  {
-        target: String,
-        img: String,
-        label: String,
-    },
-    template: `<a :href="target" target="_blank">
-            <div class="flex flex-column flex-center">
-              <img :src="img" class="img-certif img-responsive" />
-              <h4>{{ label }}</h4>
-            </div>
-        </a>`,
-};
-app.component('contact', contactComponent);
+app.component('resume-section', resumeSectionComponent);
 
 const cvDownloadComponent = {
     props:  {
@@ -400,4 +308,294 @@ const cvDownloadComponent = {
 };
 app.component('cv-download', cvDownloadComponent);
 
-app.mount('#main');
+const skillTechnicalComponent = {
+    props:  {
+        skills: Object,
+        minCount: {
+            type: Number,
+            required: false,
+            default: 1,
+        },
+        maxCount: {
+            type: Number,
+            required: false,
+            default: Number.MAX_SAFE_INTEGER,
+        },
+    },
+    template: `
+    <template v-for="(count, label) in skills">
+        <button class="btn btn-secondary btn-sm m-1" v-if="count >= minCount && count <= maxCount" :title="count+' professional experiences'">
+            {{ label }}
+        </button>
+    </template>
+    `,
+};
+app.component('skill-technical', skillTechnicalComponent);
+
+const skillSectionComponent = {
+    data() {
+        return data;
+    },
+    computed: {
+        tagsFromExperiences() {
+            const categories = [];
+
+            // Extract all tags from experiences
+            const allCategories = Object
+                .values(this.experiences)
+                .map((experience) => Object.keys(experience.tags));
+
+            // Every tag contains an array of categories
+            for (category in allCategories) {
+                categories.push(...allCategories[category]);
+            }
+
+            // Return an unique array of categories
+            return categories.filter((v, i, a) => a.indexOf(v) === i);
+        },
+    },
+    methods: {
+        skillsFromExperiences(category) {
+            const skills = {};
+
+            Object.values(this.experiences).forEach(function (experience) {
+                if (experience.type !== 'job' && experience.type !== 'freelance') {
+                    return;
+                }
+                for(const skillFromEntry in experience.tags[category]) {
+                    // Check if the skill is a key or value
+                    const skill = Number.parseInt(skillFromEntry) >= 0? experience.tags[category][skillFromEntry] : skillFromEntry;
+
+                    // Initialise the skill count
+                    if (typeof skills[skill] === 'undefined') {
+                        skills[skill] = 0;
+                    }
+
+                    skills[skill]++;
+                }
+            });
+
+            // Sort skills by count
+            return Object.fromEntries(Object.entries(skills).sort().sort(([,a],[,b]) => a-b).reverse());
+        },
+        skillsFromExperiencesToString(category) {
+            const skillsArray = [];
+            const skillsEntries = Object.entries(this.skillsFromExperiences(category));
+
+            for (let key in skillsEntries) {
+                skillsArray.push(['"'+skillsEntries[key][0]+'"', skillsEntries[key][1]]);
+            }
+
+            return "[["+skillsArray.join("],[")+"]]";
+        },
+    },
+    template: `
+        <section id="skills" class="skills site-section section-services text-center">
+            <div class="container">
+                <div class="text-center">
+                    <h3>My Skills</h3>
+                    <img src="assets/img/lines.svg" class="img-lines" alt="lines">
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-12">
+                        <div class="word-cloud" style="width: 100%; height: 400px" :data-tags="skillsFromExperiencesToString('Technical environment')"></div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="alert alert-success"><i class="fa fa-star"></i> Primary skills</h4>
+                            </div>
+                            <div class="col-md-12">
+                                <skill-technical :skills="skillsFromExperiences('Technical environment')" :min-count="2" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="alert alert-warning"><i class="far fa-star"></i> Secondary skills</h4>
+                            </div>
+                            <div class="col-md-12">
+                                <skill-technical :skills="skillsFromExperiences('Technical environment')" :max-count="1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-auto" v-for="category in tagsFromExperiences">
+                        <div class="border m-1 pb-1" v-if="category !== 'Technical environment'">
+                            <h4 class="bg-light p-2"><i class="fa fa-star"></i> {{ category }}</h4>
+                            <div class="p-1">
+                                <skill-technical :skills="skillsFromExperiences(category)" :min-count="1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.secton-skills -->
+    `,
+};
+app.component('skill-section', skillSectionComponent);
+
+const aboutSectionComponent = {
+    data() {
+        return data;
+    },
+    template: `<section id="about" class="site-section section-services text-center">
+        <div class="container" style="background: url('assets/img/skills.jpg') no-repeat right;">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="photo-profile-container"><img src="assets/img/profile.jpg" class="photo-profile" /></div>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <h1>Youssef BENHSSAIEN</h1>
+                    <p class="job-title">{{ title }}</p>
+                    <p v-html="introduction"></p>
+                    <div class="clearfix visible-xxs"></div>
+                    <router-link :to="{ name: 'resume', }" class="btn btn-border m-1">
+                        <i class="fa fa-th-list"></i> My experience
+                    </router-link>
+                    <router-link :to="{ name: 'skills', }" class="btn btn-border m-1">
+                        <i class="fa fa-code"></i> My skills
+                    </router-link>
+                </div>
+            </div>
+        </div>
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>What i do</h3>
+                    <img src="assets/img/lines.svg" class="img-lines" alt="lines">
+                </div>
+                <div class="col-sm-4" v-for="row in services">
+                    <div class="service">
+                        <img :src="row.img" alt="{{ row.alt }}">
+                        <h4>{{ row.label }}</h4>
+                        <p v-html="row.description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>`,
+};
+app.component('about-section', aboutSectionComponent);
+
+const certificationSectionComponent = {
+    data() {
+        return {
+            certifs: data.certifs,
+        };
+    },
+    template: `
+        <section id="certifications" class="certifications site-section section-services text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>My professional certifications</h3>
+                        <img src="assets/img/lines.svg" class="img-lines" alt="lines">
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 justify-content-center align-items-end">
+                    <div class="col mb-2" v-for="row in certifs">
+                        <div class="my-1"><img class="img-responsive" :src="row.img" /></div>
+                        <div class="my-1"><h5>{{ row.label }}</h5></div>
+                        <div class="text-center mt-2">
+                            <a class="btn btn-primary" :href="row.href" target="__blank">
+                                <i class="fa fa-share-square"></i> See credential
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    `,
+};
+app.component('certification-section', certificationSectionComponent);
+
+const contactSectionComponent = {
+    data() {
+        return {
+            contacts: data.contacts,
+        };
+    },
+    template: `
+        <section id="contact" class="contact site-section section-form text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Contact</h3>
+                        <img src="assets/img/lines.svg" class="img-lines" alt="lines">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12" v-for="row in contacts">
+                        <a :href="row.href" target="_blank">
+                            <div class="flex flex-column flex-center">
+                              <img :src="row.img" class="img-certif img-responsive" />
+                              <h4>{{ row.label }}</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.section-contact -->
+    `,
+};
+app.component('contact-section', contactSectionComponent);
+
+const routes = [
+    { path:'/', name:'about', component: aboutSectionComponent, meta: { transition: 'slide-left' }, },
+    { path: '/certifications', name:'certifications', component: certificationSectionComponent, meta: { transition: 'slide-left' } },
+    { path: '/skills', name:'skills', component: skillSectionComponent, meta: { transition: 'slide-left' } },
+    { path: '/resume', name:'resume', component: resumeSectionComponent, meta: { transition: 'slide-left' } },
+    { path: '/contact', name:'contact', component: contactSectionComponent, meta: { transition: 'slide-left' } },
+];
+
+const router = VueRouter.createRouter({
+    routes,
+    history: VueRouter.createWebHashHistory(),
+    scrollBehavior(to, from, savedPosition) {
+        return { el: to.hash ? to.hash : '#main', behavior: 'smooth', };
+    },
+});
+app.use(router);
+
+router.beforeEach((to, from, next) => {
+    if (typeof from.name === 'undefined' && typeof to.name === 'undefined') {
+        return  next({ name: 'about' });
+    } else if (typeof to.name === 'undefined' && typeof from.name !== 'undefined') {
+        return next(from);
+    }
+
+    return next();
+});
+
+router.afterEach(() => {
+    $(function() {
+    if ($('.word-cloud')) {
+        if (WordCloud.isSupported) {
+            $('.word-cloud').each(function () {
+                WordCloud($(this)[0], {
+                    list: $(this).data('tags'),
+                    gridSize: 18,
+                    weightFactor: 9,
+                    fontWeight: 'bold',
+                    fontFamily: 'Finger Paint, cursive, sans-serif',
+                    color: 'random-dark',
+                    hover: window.drawBox,
+                    shape: 'star',
+                    click: function (skill) {
+                        alert(skill[1] + ' professional experiences with the skill "' + skill[0] + '"');
+                    }
+                });
+            });
+        } else {
+            $('.word-cloud').remove();
+        }
+    }
+    });
+})
+
+app.mount('#app');

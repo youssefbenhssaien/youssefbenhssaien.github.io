@@ -75,7 +75,6 @@ Main components
 .cd-timeline-date {
     position: relative;
     text-align: center;
-    background: #2b343a55;
     width: fit-content;
     margin: auto;
     font-weight: bold;
@@ -91,6 +90,8 @@ Main components
   background: #333c42;
   border-radius: 2px;
   padding: 1em;
+  color: white;
+  font-size: 12px;
 }
 .cd-timeline-content .timeline-content-info {
   background: #2b343a;
@@ -199,9 +200,6 @@ Main components
     #cd-timeline-head {
         display: flex;
     }
-  .cd-timeline-block {
-    margin: 4em 0;
-  }
 
   .cd-timeline-block:first-child {
     margin-top: 0;

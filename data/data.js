@@ -1,6 +1,7 @@
 const data = {
     title: 'Senior Full Stack PHP/Javascript Developer',
     introduction: 'Hello! I\'m Youssef, a Full-stack developer, a PHP enthusiast, and a guy slighty obsessed for code quality.',
+    location: 'Toulouse, France',
     cvs: [
         { label: 'EN', href: '/data/cv/cv_en.pdf', img: '/assets/img/lang/en.png' },
         { label: 'FR', href: '/data/cv/cv_fr.pdf', img: '/assets/img/lang/fr.png' },
@@ -87,6 +88,11 @@ const data = {
                     Git: [],
                     Docker: [],
                 },
+                Tools: ['Gitlab', 'Github'],
+                Communication: {
+                    French: ['Spoken', 'Written'],
+                    English: ['Spoken', 'Written'],
+                },
             },
         },
         '2021-11-26': {
@@ -116,8 +122,15 @@ const data = {
                     //'EPO (Ecosystem PHP Orange)' : ['1.0', '2.0'],
                     Apache: ['2.4'],
                     Git: [],
-                    Gitlab: [],
                     Docker: [],
+                },
+                'Operating system': {
+                    Windows: ['10'],
+                    Ubuntu: ['20'],
+                },
+                Tools: ['Gitlab', 'vMware', 'Solr'],
+                Communication: {
+                    French: ['Spoken', 'Written'],
                 },
             },
         },
@@ -143,17 +156,19 @@ const data = {
                 'Technical environment': {
                     PHP : ['7.3'],
                     VueJs : ['2.6'],
-                    Yarn : ['1.25'],
-                    NodeJs : ['12.18'],
                     MySQL: ['5.7'],
                     Zend : ['2.5'],
                     //'OFT (Orange Framework)': ['4.6'],
                     Apache: ['2.4'],
                     Git: [],
-                    Gitlab: [],
                 },
-                Methodology: ['SAFe', 'SCRUM'],
+                Methodology: ['SAFe', 'Scrum'],
                 Architecture: ['Monolothic'],
+                Tools: ['Gitlab'],
+                Communication: {
+                    French: ['Spoken', 'Written'],
+                },
+                API: ['REST + JSON', 'JWT Token'],
             },
         },
         '2020-07-30': {
@@ -186,11 +201,18 @@ const data = {
                     Apache: ['2.2', '2.4'],
                     Nginx: ['1.15'],
                     Git: [],
-                    Gitlab: [],
                     Docker: [],
                 },
                 Architecture: ['Monolothic'],
                 Cloud: ['Cloudfoundry Paas'],
+                'Operating system': {
+                    Windows: ['10'],
+                    Ubuntu: ['20'],
+                },
+                Tools: ['Gitlab', 'vMware'],
+                Communication: {
+                    French: ['Spoken', 'Written'],
+                },
             },
         },
         '2019-05-30': {
@@ -225,10 +247,16 @@ const data = {
                     Mongodb: ['3.6'],
                     MySQL: ['5.7'],
                     Git: [],
-                    Gitlab: [],
                     Docker: [],
                 },
-                'Operating system': ['MacOs 10.13', 'Debian 9.8'],
+                'Operating system': {
+                    MacOs: ['10'],
+                    Debian: ['9'],
+                },
+                Tools: ['Gitlab'],
+                Communication: {
+                    French: ['Spoken', 'Written'],
+                },
             },
         },
         '2019-02-15': {
@@ -258,9 +286,15 @@ const data = {
                     Apache: ['2.4'],
                     MySQL: ['5.6', '5.7'],
                     Git: [],
-                    Gitlab: [],
                 },
-                'Operating system': ['Windows 7', 'RedHat 7.5'],
+                'Operating system': {
+                    Windows: ['7'],
+                    RedHat: ['7'],
+                },
+                Tools: ['Gitlab',],
+                Communication: {
+                    French: ['Spoken', 'Written'],
+                },
             },
         },
         '2018-04-30': {
@@ -286,10 +320,15 @@ const data = {
                     Apache: ['2.4'],
                     Angular: ['5.1'],
                     Firebase: [],
-                    Bitbucket: [],
                 },
-                'Operating system': ['Windows 10'],
-                API: ['REST + JSON', 'Session token']
+                'Operating system': {
+                    Windows: ['10'],
+                },
+                API: ['REST + JSON', 'Session Token'],
+                Tools: ['Bitbucket'],
+                Communication: {
+                    French: ['Spoken', 'Written'],
+                },
             },
         },
         '2018-01-10': {
@@ -319,11 +358,15 @@ const data = {
                     NodeJs: ['6.x'],
                     Firebase: [],
                     Git: [],
-                    Gitlab: [],
-                    vMware: ['vSphere'],
                     Ansible: [],
                 },
-                'Operating system': ['Centos 6'],
+                'Operating system': {
+                    Centos: ['6'],
+                },
+                Tools: ['Gitlab', 'vSphere'],
+                Communication: {
+                    French: ['Spoken', 'Written'],
+                },
             },
         },
         '2017-11-30': {
@@ -357,9 +400,12 @@ const data = {
                     MySQL: ['5.5', '5.6'],
                     PostgreSQL: ['10.1'],
                     SVN: [],
-                    Solr: ['5.1'],
-                    Jenkins: ['1.631'],
-                    vMware: ['vSphere'],
+                    //Solr: ['5.1'],
+                    //Jenkins: ['1.631'],
+                },
+                Tools: ['vSphere', 'Jenkins', 'Solr'],
+                Communication: {
+                    French: ['Spoken', 'Written'],
                 },
             },
         },
@@ -424,18 +470,18 @@ const data = {
                     Apache: ['2.x'],
                     Redis: [],
                     C: [],
-                    'Blocket Templating Language': [],
+                    //'Blocket Templating Language': [],
                     PostgreSQL: [],
                     Git: [],
-                    Github: [],
                 },
-                API: ['REST + JSON', 'Session Token', 'MD5'],
+                API: ['REST + JSON', 'Session Token'],
                 Cloud: ['AWS'],
-                Tools: ['Jira', 'Confluence', 'Optimizely'],
+                Tools: ['Github', 'Jira', 'Confluence', 'Optimizely'],
                 Communication: {
                     English: ['Spoken', 'Written'],
                     French: ['Written'],
                 },
+                Methodology: ['Scrum'],
                 Architecture: ['Microservice'],
             },
         },
@@ -471,6 +517,7 @@ const data = {
                 },
                 API: ['REST + JSON', 'Session Token'],
                 Tools: ['Redmine'],
+                Methodology: ['Scrum'],
                 Communication: {
                     French: ['Spoken', 'Written'],
                     English: ['Written'],
