@@ -578,13 +578,30 @@ router.afterEach(() => {
     $(function() {
     if ($('.typed') && Typed) {
         $('.typed').each(function (id) {
+            if ($(this).is('.typing, .completed')) {
+                return;
+            }
+
             if (!$(this).attr('id')) {
                 $(this).attr('id', 'typed'+id);
             }
-            new Typed('#'+$(this).attr('id'), {
-                strings: [$(this).data('strings')],
-                typeSpeed: 50,
-            });
+            new Typed(
+                '#'+$(this).attr('id'),
+                {
+                    strings: [$(this).data('strings')],
+                    typeSpeed: 50,
+                    onBegin: function(el) {
+                        $(el.el).addClass('typing');
+                    },
+                    onComplete: function(el) {
+                        $(el.el).removeClass('typing');
+                        $(el.el).addClass('completed');
+                    },
+                    onReset: function(el) {
+                        $(el.el).html('');
+                    },
+                },
+            );
         });
     }
     if ($('.word-cloud')) {
