@@ -444,15 +444,17 @@ const aboutSectionComponent = {
         return data;
     },
     template: `<section id="about" class="site-section section-services text-center">
-        <div class="container" style="background: url('assets/img/skills.jpg') no-repeat right;">
+        <div class="container" style="background: url('assets/img/skills.jpg') no-repeat right fixed;">
             <div class="row justify-content-center">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="photo-profile-container"><img src="assets/img/profile.jpg" class="photo-profile" /></div>
                 </div>
                 <div class="col-md-6 col-md-offset-3">
                     <h1>Youssef BENHSSAIEN</h1>
-                    <p class="job-title">{{ title }}</p>
-                    <p v-html="introduction"></p>
+                    <div class="console-container my-4">
+                        <div class="console-title">{{ title }}</div>
+                        <div class="console-body">$ <span class="typed" :data-strings="introduction"></span></div>
+                    </div>
                     <div class="clearfix visible-xxs"></div>
                     <router-link :to="{ name: 'resume', }" class="btn btn-border m-1">
                         <i class="fa fa-th-list"></i> My experience
@@ -574,6 +576,17 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(() => {
     $(function() {
+    if ($('.typed') && Typed) {
+        $('.typed').each(function (id) {
+            if (!$(this).attr('id')) {
+                $(this).attr('id', 'typed'+id);
+            }
+            new Typed('#'+$(this).attr('id'), {
+                strings: [$(this).data('strings')],
+                typeSpeed: 50,
+            });
+        });
+    }
     if ($('.word-cloud')) {
         if (WordCloud.isSupported) {
             $('.word-cloud').each(function () {
