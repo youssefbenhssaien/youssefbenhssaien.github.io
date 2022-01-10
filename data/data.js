@@ -75,20 +75,23 @@ const data = {
             },
             tags: {
                 'Technical environment': {
-                    PHP : [],
-                    Symfony : [],
-                    Doctrine : [],
-                    VueJs: [],
+                    PHP : ['5.x', '7.x', '8.x'],
+                    Symfony : ['2.x', '3.x', '4.x', '5.x', '6.x'],
+                    Doctrine : '2.x',
+                    VueJs: ['2.x', '3.x'],
                     MySQL: [],
                     PostgreSQL: [],
                     Redis: [],
                     Mongodb: [],
-                    Apache: [],
+                    Apache: '2.x',
                     Nginx: [],
                     Git: [],
                     Docker: [],
                 },
                 Tools: ['Gitlab', 'Github'],
+                Cloud: ['Iaas', 'Paas'],
+                API: ['REST'],
+                Architecture: ['Legacy', 'Front-Back', 'Multilayered', 'Monolothic', 'Microservices', 'Hexagonal', 'Event-Driven'],
                 Communication: {
                     French: ['Spoken', 'Written'],
                     English: ['Spoken', 'Written'],
@@ -115,18 +118,18 @@ const data = {
             ],
             tags: {
                 'Technical environment': {
-                    PHP : ['7.3'],
+                    PHP : '7.3',
                     Symfony : ['4.4', '5.4'],
-                    Doctrine : ['2.x'],
-                    MySQL: ['5.7'],
+                    Doctrine : '2.x',
+                    MySQL: '5.7',
                     //'EPO (Ecosystem PHP Orange)' : ['1.0', '2.0'],
-                    Apache: ['2.4'],
+                    Apache: '2.4',
                     Git: [],
                     Docker: [],
                 },
                 'Operating system': {
-                    Windows: ['10'],
-                    Ubuntu: ['20'],
+                    Windows: '10',
+                    Ubuntu: '20',
                 },
                 Tools: ['Gitlab', 'vMware', 'Solr'],
                 Communication: {
@@ -154,12 +157,12 @@ const data = {
             ],
             tags: {
                 'Technical environment': {
-                    PHP : ['7.3'],
-                    VueJs : ['2.6'],
-                    MySQL: ['5.7'],
-                    Zend : ['2.5'],
+                    PHP : '7.3',
+                    VueJs : '2.6',
+                    MySQL: '5.7',
+                    Zend : '2.5',
                     //'OFT (Orange Framework)': ['4.6'],
-                    Apache: ['2.4'],
+                    Apache: '2.4',
                     Git: [],
                 },
                 Methodology: ['SAFe', 'Scrum'],
@@ -168,7 +171,10 @@ const data = {
                 Communication: {
                     French: ['Spoken', 'Written'],
                 },
-                API: ['REST + JSON', 'JWT Token'],
+                API: {
+                    REST: 'JSON',
+                    'JWT Token': [],
+                },
             },
         },
         '2020-07-30': {
@@ -192,22 +198,24 @@ const data = {
             tags: {
                 'Technical environment': {
                     PHP : ['5.2', '5.4', '5.6', '7.1', '7.2', '7.3', '7.4'],
-                    Symfony : ['4.4'],
-                    Doctrine : ['2.x'],
+                    Symfony : '4.4',
+                    Doctrine : '2.x',
                     //'EPO (Ecosystem PHP Orange)' : ['1.0-beta'],
                     Zend : ['1.10', '1.12', '2.4'],
                     //'OFT (Orange Framework)': ['1.1', '2.2', '3.1'],
-                    MySQL: ['5.7'],
+                    MySQL: '5.7',
                     Apache: ['2.2', '2.4'],
-                    Nginx: ['1.15'],
+                    Nginx: '1.15',
                     Git: [],
                     Docker: [],
                 },
                 Architecture: ['Monolothic'],
-                Cloud: ['Cloudfoundry Paas'],
+                Cloud: {
+                    Cloudfoundry: 'Paas',
+                },
                 'Operating system': {
-                    Windows: ['10'],
-                    Ubuntu: ['20'],
+                    Windows: '10',
+                    Ubuntu: '20',
                 },
                 Tools: ['Gitlab', 'vMware'],
                 Communication: {
@@ -241,17 +249,17 @@ const data = {
             tags: {
                 'Technical environment': {
                     PHP : ['7.1', '7.3'],
-                    Laravel : ['5.7'],
-                    Prestashop : ['1.7'],
-                    Elasticsearch: ['6.4'],
-                    Mongodb: ['3.6'],
-                    MySQL: ['5.7'],
+                    Laravel : '5.7',
+                    Prestashop : '1.7',
+                    Elasticsearch: '6.4',
+                    Mongodb: '3.6',
+                    MySQL: '5.7',
                     Git: [],
                     Docker: [],
                 },
                 'Operating system': {
-                    MacOs: ['10'],
-                    Debian: ['9'],
+                    MacOs: '10',
+                    Debian: '9',
                 },
                 Tools: ['Gitlab'],
                 Communication: {
@@ -281,17 +289,17 @@ const data = {
             ],
             tags: {
                 'Technical environment': {
-                    PHP : ['7.1'],
-                    Symfony : ['4.1'],
-                    Apache: ['2.4'],
+                    PHP : '7.1',
+                    Symfony : '4.1',
+                    Apache: '2.4',
                     MySQL: ['5.6', '5.7'],
                     Git: [],
                 },
                 'Operating system': {
-                    Windows: ['7'],
-                    RedHat: ['7'],
+                    Windows: '7',
+                    RedHat: '7',
                 },
-                Tools: ['Gitlab',],
+                Tools: ['Gitlab'],
                 Communication: {
                     French: ['Spoken', 'Written'],
                 },
@@ -315,16 +323,19 @@ const data = {
             ],
             tags: {
                 'Technical environment': {
-                    PHP : ['7.0'],
-                    Symfony : ['4.0'],
-                    Apache: ['2.4'],
-                    Angular: ['5.1'],
+                    PHP : '7.0',
+                    Symfony : '4.0',
+                    Apache: '2.4',
+                    Angular: '5.1',
                     Firebase: [],
                 },
                 'Operating system': {
-                    Windows: ['10'],
+                    Windows: '10',
                 },
-                API: ['REST + JSON', 'Session Token'],
+                API: {
+                    REST: 'JSON',
+                    'Session Token':[],
+                },
                 Tools: ['Bitbucket'],
                 Communication: {
                     French: ['Spoken', 'Written'],
@@ -350,18 +361,18 @@ const data = {
             ],
             tags: {
                 'Technical environment': {
-                    Python : ['2.7'],
+                    Python : '2.7',
                     AdonisJs : [],
                     Pyvmomi : [],
                     Redis: [],
-                    Angular: ['4.x'],
-                    NodeJs: ['6.x'],
+                    Angular: '4.x',
+                    NodeJs: '6.x',
                     Firebase: [],
                     Git: [],
                     Ansible: [],
                 },
                 'Operating system': {
-                    Centos: ['6'],
+                    Centos: '6',
                 },
                 Tools: ['Gitlab', 'vSphere'],
                 Communication: {
@@ -398,7 +409,7 @@ const data = {
                     Joomla : ['2.5', '3.4', '3.6'],
                     Apache: ['2.2', '2.4'],
                     MySQL: ['5.5', '5.6'],
-                    PostgreSQL: ['10.1'],
+                    PostgreSQL: '10.1',
                     SVN: [],
                     //Solr: ['5.1'],
                     //Jenkins: ['1.631'],
@@ -431,12 +442,14 @@ const data = {
             tags: {
                 'Technical environment': {
                     PHP : ['5.3', '5.6'],
-                    Zend : ['1.12'],
+                    Zend : '1.12',
                     Apache: ['2.2', '2.4'],
-                    MySQL: ['5.x'],
+                    MySQL: '5.x',
                     SVN: [],
                 },
-                API: ['REST + XML'],
+                API: {
+                    REST: 'XML',
+                },
                 Tools: ['Jira', 'Confluence'],
                 Communication: {
                     French: ['Spoken', 'Written'],
@@ -465,24 +478,29 @@ const data = {
             ],
             tags: {
                 'Technical environment': {
-                    PHP : ['5.x'],
-                    Symfony : ['2.x'],
-                    Apache: ['2.x'],
+                    PHP : '5.x',
+                    Symfony : '2.x',
+                    Apache: '2.x',
                     Redis: [],
                     C: [],
                     //'Blocket Templating Language': [],
                     PostgreSQL: [],
                     Git: [],
                 },
-                API: ['REST + JSON', 'Session Token'],
-                Cloud: ['AWS'],
+                API: {
+                    REST: 'JSON',
+                    'Session Token': [],
+                },
+                Cloud: {
+                    'AWS': 'Iaas',
+                },
                 Tools: ['Github', 'Jira', 'Confluence', 'Optimizely'],
                 Communication: {
                     English: ['Spoken', 'Written'],
-                    French: ['Written'],
+                    French: 'Written',
                 },
                 Methodology: ['Scrum'],
-                Architecture: ['Microservice'],
+                Architecture: ['Microservices'],
             },
         },
         '2015-11-15': {
@@ -507,20 +525,23 @@ const data = {
             ],
             tags: {
                 'Technical environment': {
-                    PHP : ['5.x'],
-                    Symfony : ['2.x'],
+                    PHP : '5.x',
+                    Symfony : '2.x',
                     Doctrine : [],
-                    Apache: ['2.x'],
+                    Apache: '2.x',
                     PostgreSQL: [],
                     Git: [],
                     Gitlab: [],
                 },
-                API: ['REST + JSON', 'Session Token'],
+                API: {
+                    REST: 'JSON',
+                    'Session Token': [],
+                },
                 Tools: ['Redmine'],
                 Methodology: ['Scrum'],
                 Communication: {
                     French: ['Spoken', 'Written'],
-                    English: ['Written'],
+                    English: 'Written',
                 },
             },
         },
@@ -542,9 +563,9 @@ const data = {
             ],
             tags: {
                 'Technical environment': {
-                    PHP : ['5.x'],
-                    Apache: ['2.x'],
-                    Oracle: ['3.2'],
+                    PHP : '5.x',
+                    Apache: '2.x',
+                    Oracle: '3.2',
                     Smarty: [],
                     SVN: [],
                     Shell: [],
@@ -572,9 +593,9 @@ const data = {
             ],
             tags: {
                 'Technical environment': {
-                    PHP : ['5.x'],
-                    Apache: ['2.x'],
-                    Oracle: ['3.2'],
+                    PHP : '5.x',
+                    Apache: '2.x',
+                    Oracle: '3.2',
                     Smarty: [],
                     SVN: [],
                     Shell: [],
@@ -600,8 +621,8 @@ const data = {
             ],
             tags: {
                 'Technical environment': {
-                    PHP : ['5.x'],
-                    Apache: ['2.x'],
+                    PHP : '5.x',
+                    Apache: '2.x',
                     MySQL: [],
                 },
             },

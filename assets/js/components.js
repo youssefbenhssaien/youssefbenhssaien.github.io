@@ -100,21 +100,27 @@ app.component('timeline-element', timelineElementComponent);
 const timelineTagsComponent = {
     props:  {
         title: String,
-        tags: Object,
+        tags: Object | String,
     },
     template: `<div class="mt-2">
         <h6 class="font-weight-bold">{{ title }} : </h6>
         <ul class="content-skills">
-            <li v-for="(tag_value, tag_name) in tags">
-                <template v-if="typeof tag_name === 'number'">
-                    <!-- Simple tags -->
-                    {{ tag_value }}
-                </template>
-                <template v-if="typeof tag_value === 'object'">
-                    <!-- Versionned tags -->
-                    {{ tag_name }} <span v-if="tag_value.length > 0">[{{ tag_value.join(", ")}}]</span>
-                </template>
-            </li>
+            <li v-if="typeof tags !== 'object'">{{ tags }}</li>
+            
+                <li v-else v-for="(tag_value, tag_name) in tags">
+                    <template v-if="typeof tag_name === 'number'">
+                        <!-- Simple tags -->
+                        {{ tag_value }}
+                    </template>
+                    <template v-else-if="typeof tag_value === 'object'">
+                        <!-- Versionned tags -->
+                        {{ tag_name }} <span v-if="tag_value.length > 0">[{{ tag_value.join(", ") }}]</span>
+                    </template>
+                    <template v-else>
+                        <!-- Versionned tags -->
+                        {{ tag_name }} {{ tag_value }}
+                    </template>
+                </li>
         </ul>
     </div>`
 };
@@ -364,7 +370,9 @@ const skillSectionComponent = {
                 }
                 for(const skillFromEntry in experience.tags[category]) {
                     // Check if the skill is a key or value
-                    const skill = Number.parseInt(skillFromEntry) >= 0? experience.tags[category][skillFromEntry] : skillFromEntry;
+                    skill = Number.parseInt(skillFromEntry) >= 0
+                        ? experience.tags[category][skillFromEntry]
+                        : skillFromEntry;
 
                     // Initialise the skill count
                     if (typeof skills[skill] === 'undefined') {
