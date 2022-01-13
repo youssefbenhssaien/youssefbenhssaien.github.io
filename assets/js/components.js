@@ -59,8 +59,13 @@ const timelineElementComponent = {
             required: false,
         },
     },
+    computed: {
+        dateToId() {
+            return this.date.replaceAll(' ', '').replaceAll('/', '_');
+        },
+    },
     template: `
-    <div class="cd-timeline-block" :class="'timeline-block-'+align">
+    <div class="cd-timeline-block" :class="'timeline-block-'+align" :id="dateToId">
         <div class="cd-timeline-img cd-picture text-center">
             <i class="fa fa-calendar-day"></i>
         </div>

@@ -62,7 +62,7 @@ const data = {
         { label: 'Dev.to', img: 'assets/img/social/devto.png', href: 'https://dev.to/ybenhssaien' },
     ],
     experiences: {
-        '2021-12-02': {
+        /*'2021-12-02': {
             type: 'freelance',
             client: {
                 name: 'Senior PHP developer / Full-Stack developer / Lead developer',
@@ -97,7 +97,7 @@ const data = {
                     English: ['Spoken', 'Written'],
                 },
             },
-        },
+        },*/
         '2021-11-26': {
             type: 'job',
             client: {
