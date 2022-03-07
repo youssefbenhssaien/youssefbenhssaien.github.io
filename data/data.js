@@ -3,12 +3,8 @@ const data = {
     introduction: 'Hello! I\'m Youssef, a Full-stack developer, a PHP enthusiast, and a guy slighty obsessed for code quality.',
     location: 'Toulouse, France',
     cvs: [
-        { label: 'EN', href: '/data/cv/cv_en.pdf', img: '/assets/img/lang/en.png' },
-        { label: 'FR', href: '/data/cv/cv_fr.pdf', img: '/assets/img/lang/fr.png' },
-    ],
-    experiences: [
-        { label: 'Linkedin', href: 'https://www.linkedin.com/in/youssefbenhssaien/#experience-section', img: '/assets/img/social/linkedin-16.png' },
-        { label: 'Stackoverflow', href: 'https://stackoverflow.com/story/youssef.benhssaien', img: '/assets/img/social/stack-overflow-16.png' },
+        { label: 'EN', href: 'mailto:youssef.benhssaien@gmail.com?subject=From youssefbenhssaien.me - CV download', img: '/assets/img/lang/en.png' },
+        { label: 'FR', href: 'mailto:youssef.benhssaien@gmail.com?subject=Source youssefbenhssaien.me - demande de CV', img: '/assets/img/lang/fr.png' },
     ],
     services: [
         { label: 'Back-end', description: 'Utilising php frameworks such as Symfony or creating bespoke code, I\'ve written services supporting thousands of users, including REST APIs, e-learning applications and more.', img: 'assets/img/back-end.svg', alt: 'Back End Developer' },
@@ -54,7 +50,7 @@ const data = {
     contacts: [
         { label: 'E-mail', img: 'assets/img/social/gmail.png', href: 'mailto:youssef.benhssaien@gmail.com?subject=From youssefbenhssaien.me -' },
         { label: 'Linkedin', img: 'assets/img/social/linkedin.png', href: 'https://www.linkedin.com/in/youssefbenhssaien' },
-        { label: 'Stackoverflow', img: 'assets/img/social/stack-overflow.png', href: 'https://stackoverflow.com/story/youssef.benhssaien' },
+        { label: 'Stackoverflow', img: 'assets/img/social/stack-overflow.png', href: 'https://stackoverflow.com/users/7326498/ybenhssaien' },
         { label: 'Twitter', img: 'assets/img/social/twitter.png', href: 'https://twitter.com/ysfbenhssaien' },
         { label: 'Github', img: 'assets/img/social/github.png', href: 'https://github.com/ybenhssaien' },
         { label: 'Gitlab', img: 'assets/img/social/gitlab.png',  href: 'https://gitlab.com/ybenhssaien' },
