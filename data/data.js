@@ -626,6 +626,14 @@ const data = {
         },
     },
     certifications: {
+        '2023-06-30': {
+            type: 'certification',
+            name: 'Symfony 6 Certified Developer',
+            organisation: 'Symfony SAS',
+            date: '06/2023',
+            logo: '/assets/img/certif/certif-symfony6.png',
+            url: 'https://connect.symfony.com/profile/moghreb',
+        },
         '2021-04-27': {
             type: 'certification',
             name: 'GitLab Certified Associate',
