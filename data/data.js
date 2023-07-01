@@ -41,10 +41,11 @@ const data = {
         { href: 'https://bananacloud.fr', img: '/assets/img/enterprises/bananacloud.png' },
         { href: 'https://www.fnac.com', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Fnac_Logo.svg/1200px-Fnac_Logo.svg.png' },
         { href: 'https://www.orange.fr', img: 'https://c.woopic.com/logo-orange.png' },
+        { href: 'https://www.safti.fr', img: 'https://www.safti.fr/assets/diverged/svg/saftilogo.svg' },
     ],
     stats: [
         { label: 'Years Experience', count: Math.floor((Date.now() - new Date('03-03-2014'))/1000/60/60/24/365)},
-        { label: 'professional Projects', count: 23 },
+        { label: 'professional Projects', count: 24 },
         { label: 'Personal projects', count: 16 },
         { label: 'Open source projects', count: 3 },
     ],
@@ -95,6 +96,41 @@ const data = {
                 },
             },
         },*/
+        '2022-01-17': {
+            type: 'job',
+            client: {
+                name: 'New Immo group (safti.fr, megagence.com, safti.es, safeti-immobilien.de)',
+            },
+            mission: {
+                location: 'Toulouse - France',
+                period: { start: '01/2023', end: 'today'},
+                title: 'Symfony Senior developer',
+                description: 'Omega Legacy migration to hexagonal architecture based on Symfony',
+                icon: 'fab fa-php',
+            },
+            tasks: [
+            ],
+            tags: {
+                'Technical environment': {
+                    PHP : ['7.4', '8.1'],
+                    Symfony : ['5.4'],
+                    Doctrine : '2.x',
+                    Mariadb: '10.3',
+                    Nginx: [],
+                    Git: [],
+                    Docker: [],
+                },
+                Architecture: ['Hexagonal', 'Monolothic'],
+                'Operating system': {
+                    Ubuntu: '22',
+                },
+                Tools: ['Gitlab', 'Jira', 'Dynatrace'],
+                Communication: {
+                    French: ['Spoken', 'Written'],
+                    English: ['Spoken', 'Written'],
+                },
+            },
+        },
         '2021-11-26': {
             type: 'job',
             client: {
