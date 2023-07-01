@@ -16,6 +16,7 @@ const data = {
         { label: 'Symfony 5 Certified Developer', img: '/assets/img/certif/certif-symfony.png', href: 'https://connect.symfony.com/profile/moghreb' },
         { label: 'The Professional Scrum Master I (PSM I)', img: '/assets/img/certif/certif-psmi.svg', href: 'https://www.scrum.org/user/345856' },
         { label: 'GitLab Certified Associate', img: '/assets/img/certif/certif-gitlab.png', href: 'https://badgr.com/public/assertions/ccH_dcC1T7eFD2MuGsu6_Q?identity__email=youssef.benhssaien@gmail.com' },
+        { label: 'Symfony 6 Certified Developer', img: '/assets/img/certif/certif-symfony6.png', href: 'https://connect.symfony.com/profile/moghreb' },
     ],
     skills : [
         { label: 'PHP', count: 90 },
