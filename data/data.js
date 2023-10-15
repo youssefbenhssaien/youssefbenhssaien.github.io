@@ -20,6 +20,7 @@ const data = {
     ],
     skills : [
         { label: 'PHP', count: 90 },
+        { label: 'Symfony', count: 80 },
         { label: 'MySQL', count: 70 },
         { label: 'Javascript', count: 70 },
         { label: 'Git', count: 70 },
@@ -99,13 +100,13 @@ const data = {
         '2022-01-17': {
             type: 'job',
             client: {
-                name: 'New Immo group (safti.fr, megagence.com, safti.es, safeti-immobilien.de)',
+                name: 'New Immo group (safti.fr, safti.es, safeti-immobilien.de)',
             },
             mission: {
                 location: 'Toulouse - France',
                 period: { start: '01/2023', end: 'today'},
                 title: 'Symfony Senior developer',
-                description: 'Omega Legacy migration to hexagonal architecture based on Symfony',
+                description: 'Legacy migration to hexagonal architecture based on Symfony for the main CRM Omega',
                 icon: 'fab fa-php',
             },
             tasks: [
@@ -113,9 +114,10 @@ const data = {
             tags: {
                 'Technical environment': {
                     PHP : ['7.4', '8.1'],
-                    Symfony : ['5.4'],
+                    Symfony : ['5.4', '6.1'],
                     Doctrine : '2.x',
                     Mariadb: '10.3',
+                    ReactJs: '18.x',
                     Nginx: [],
                     Git: [],
                     Docker: [],
