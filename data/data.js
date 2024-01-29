@@ -45,7 +45,7 @@ const data = {
         { href: 'https://www.safti.fr', img: 'https://www.safti.fr/assets/diverged/svg/saftilogo.svg' },
     ],
     stats: [
-        { label: 'Years Experience', count: Math.floor((Date.now() - new Date('03-03-2014'))/1000/60/60/24/365)},
+        { label: 'Years Experience', count: Math.floor((Date.now() - new Date('03-03-2014'))/1000/60/60/24/365) || 10},
         { label: 'professional Projects', count: 24 },
         { label: 'Personal projects', count: 16 },
         { label: 'Open source projects', count: 3 },
@@ -61,10 +61,10 @@ const data = {
         { label: 'Dev.to', img: 'assets/img/social/devto.png', href: 'https://dev.to/ybenhssaien' },
     ],
     experiences: {
-        /*'2021-12-02': {
+        '2024-02-01': {
             type: 'freelance',
             client: {
-                name: 'Senior PHP developer / Full-Stack developer / Lead developer',
+                name: 'Senior PHP/Symfony developer / Full-Stack developer / Lead developer',
             },
             mission: {
                 location: 'Toulouse - France / Full Remote',
@@ -75,9 +75,10 @@ const data = {
             tags: {
                 'Technical environment': {
                     PHP : ['5.x', '7.x', '8.x'],
-                    Symfony : ['2.x', '3.x', '4.x', '5.x', '6.x'],
-                    Doctrine : '2.x',
+                    Symfony : ['2.x', '3.x', '4.x', '5.x', '6.x', '7.x'],
+                    Doctrine : [],
                     VueJs: ['2.x', '3.x'],
+                    ReactJs: [],
                     MySQL: [],
                     PostgreSQL: [],
                     Redis: [],
@@ -88,7 +89,7 @@ const data = {
                     Docker: [],
                 },
                 Tools: ['Gitlab', 'Github'],
-                Cloud: ['Iaas', 'Paas'],
+                Cloud: ['Iaas', 'Paas', 'AWS'],
                 API: ['REST'],
                 Architecture: ['Legacy', 'Front-Back', 'Multilayered', 'Monolothic', 'Microservices', 'Hexagonal', 'Event-Driven'],
                 Communication: {
@@ -96,7 +97,7 @@ const data = {
                     English: ['Spoken', 'Written'],
                 },
             },
-        },*/
+        },
         '2022-01-17': {
             type: 'job',
             client: {
