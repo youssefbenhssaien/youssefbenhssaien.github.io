@@ -707,6 +707,14 @@ const data = {
         },
     },
     formations: {
+        '2023-07-13': {
+            type: 'formation',
+            name: 'Professional formation',
+            title: 'Blockchain - introduction',
+            date: '2023',
+            school: 'M2I',
+            location: 'Montpellier - France (Remotely)',
+        },
         '2014-06-31': {
             type: 'formation',
             name: 'Specialised Master Degree',
