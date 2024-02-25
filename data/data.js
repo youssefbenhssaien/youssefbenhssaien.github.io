@@ -105,7 +105,7 @@ const data = {
             },
             mission: {
                 location: 'Toulouse - France',
-                period: { start: '01/2023', end: 'today'},
+                period: { start: '01/2022', end: '01/2024'},
                 title: 'Symfony Senior developer',
                 description: 'Legacy migration to hexagonal architecture based on Symfony for the main CRM Omega',
                 icon: 'fab fa-php',
