@@ -98,7 +98,7 @@ const data = {
                 },
             },
         },
-        '2022-01-17': {
+        /*'2022-01-17'*/'2024-01-23': {
             type: 'job',
             client: {
                 name: 'New Immo group (safti.fr, safti.es, safeti-immobilien.de)',
