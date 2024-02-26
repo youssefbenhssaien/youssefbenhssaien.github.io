@@ -464,19 +464,19 @@ const aboutSectionComponent = {
                     <h3>Who I am</h3>
                     <img src="assets/img/lines.svg" class="img-lines" alt="lines">
                 </div>
-                <div class="col-md-3 col-md-offset-3">
+                <div class="col-md-3 col-md-offset-3 text-left">
                     <div class="photo-profile-container mb-3"><img src="assets/img/profile.jpg" class="photo-profile" /></div>
                     <div class="clearfix visible-xxs"></div>
-                    <router-link :to="'#skills'" class="btn btn-border m-1">
-                        <i class="fa fa-code"></i> My skills
+                    <router-link :to="{ name: 'resume', }" class="btn btn-border m-1 text-left" style="width: 100%">
+                        <i class="fa fa-th-list"></i> My resume
                     </router-link>
-                    <router-link :to="{ name: 'resume', }" class="btn btn-border m-1">
-                        <i class="fa fa-th-list"></i> My experience
-                    </router-link>
-                    <router-link :to="'#certifications'" class="btn btn-border m-1">
+                    <router-link :to="'#certifications'" class="btn btn-border m-1 text-left" style="width: 100%">
                         <i class="fa fa-award"></i> My certifications
                     </router-link>
-                    <router-link :to="'#contact'" class="btn btn-border m-1">
+                    <router-link :to="'#skills'" class="btn btn-border m-1 text-left" style="width: 100%">
+                        <i class="fa fa-code"></i> My skills
+                    </router-link>
+                    <router-link :to="'#contact'" class="btn btn-border m-1 text-left" style="width: 100%">
                         <i class="fa fa-envelope"></i> Contact
                     </router-link>
                 </div>
