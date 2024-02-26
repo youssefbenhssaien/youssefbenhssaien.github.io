@@ -584,3 +584,33 @@ a.icon-up-bg:hover {color: #212121;}
     height: 2px;
     margin: 50px auto;
 }
+
+.announcement {
+    img {
+        width: 100%;
+    }
+    .announcement-title {
+        font-size: 2rem;
+        font-weight: 700;
+        font-family: Ubuntu, sans-serif;
+    }
+}
+
+.tags {
+    font-size: 12px;
+    padding: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tags li {
+    background: #40484d;
+    border-radius: 2px;
+    display: inline-block;
+    padding: 2px 10px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 3px 2px;
+    text-align: center;
+    flex-grow: 1;
+}

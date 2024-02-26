@@ -27,7 +27,7 @@ const timelineComponent = {
         <template v-for="element in elements">
             <timeline-certification :certif="element" v-if="element.type === 'certification'" />
             <timeline-formation :formation="element" v-else-if="element.type === 'formation'" />
-            <timeline-job :job="element" v-else />
+            <timeline-job :job="element" v-else-if="element.type !== 'announcement'" />
         </template>
     </section>
     `
@@ -102,34 +102,30 @@ const timelineElementComponent = {
 }
 app.component('timeline-element', timelineElementComponent);
 
-const timelineTagsComponent = {
+const tagsComponent = {
     props:  {
         title: String,
         tags: Object | String,
     },
     template: `<div class="mt-2">
         <h6 class="font-weight-bold">{{ title }} : </h6>
-        <ul class="content-skills">
+        <ul class="tags">
             <li v-if="typeof tags !== 'object'">{{ tags }}</li>
-            
-                <li v-else v-for="(tag_value, tag_name) in tags">
-                    <template v-if="typeof tag_name === 'number'">
-                        <!-- Simple tags -->
-                        {{ tag_value }}
-                    </template>
-                    <template v-else-if="typeof tag_value === 'object'">
-                        <!-- Versionned tags -->
-                        {{ tag_name }} <span v-if="tag_value.length > 0">[{{ tag_value.join(", ") }}]</span>
-                    </template>
-                    <template v-else>
-                        <!-- Versionned tags -->
-                        {{ tag_name }} {{ tag_value }}
-                    </template>
-                </li>
+            <li v-else v-for="(tag_value, tag_name) in tags">
+                <template v-if="typeof tag_name === 'number'">
+                    {{ tag_value }}
+                </template>
+                <template v-else-if="typeof tag_value === 'object'">
+                    {{ tag_name }} <span v-if="tag_value.length > 0">[{{ tag_value.join(", ") }}]</span>
+                </template>
+                <template v-else>
+                    {{ tag_name }} {{ tag_value }}
+                </template>
+            </li>
         </ul>
     </div>`
 };
-app.component('timeline-tags', timelineTagsComponent);
+app.component('tags', tagsComponent);
 
 const timelineTasksComponent = {
     props:  {
@@ -170,7 +166,7 @@ const timelineJobComponent = {
         </template>
         <template v-if="tags">
             <div v-for="(tag_tags, tag_title) in tags">
-                <timeline-tags :title="tag_title" :tags="tag_tags" />
+                <tags :title="tag_title" :tags="tag_tags" />
             </div>
         </template>
     </timeline-element>
@@ -569,11 +565,50 @@ const contactSectionComponent = {
 };
 app.component('contact-section', contactSectionComponent);
 
+const announcementSection = {
+    data() {
+        return {
+            announce: Object.values(data.experiences).filter((experience) => experience.type === 'announcement')[0],
+        };
+    },
+    template: `
+        <section class="site-section announcement" v-if="announce && announce.show">
+            <div class="container p-0">
+                <div class="alert alert-warning alert-dismissible fade show p-0" role="alert">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="assets/img/announcement.png" />
+                        </div>
+                        <div class="col-md-9 my-2">
+                          <h1 class="announcement-title">{{ announce.title }}</h1>
+                          <div>
+                              <div><strong>Position:</strong> {{ announce.client.name }}</div>
+                              <div><strong>Location:</strong> {{ announce.mission.location }}</div>
+                              <div><strong>Availability:</strong> {{ announce.mission.period.start }}</div>
+                              <div v-for="(tags, title) in announce.tags">
+                                <tags :title="title" :tags="tags" />
+                              </div>
+                          </div>
+                          <div class="alert alert-danger m-1">
+                              Do you have or want to share an opportunity ? <router-link to="#contact">Lets get in touch !</router-link>
+                          </div>
+                        </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </section>`,
+}
+app.component('announcement-section', announcementSection);
+
 const indexPage = {
     data() {
         return data;
     },
     template: `<div>
+        <announcement-section class="mt-3" />
         <about-section class="mt-3" />
         <certification-section class="mt-3" />
         <skill-section class="mt-3" />

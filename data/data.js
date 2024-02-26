@@ -66,13 +66,15 @@ const data = {
     ],
     experiences: {
         '2024-02-01': {
-            type: 'freelance',
+            type: 'announcement',
+            show: true,
+            title: '🚀 Looking for a New Freelance Mission! 🚀',
             client: {
                 name: 'Senior PHP/Symfony developer / Full-Stack developer / Lead developer',
             },
             mission: {
                 location: 'Toulouse - France / Full Remote',
-                period: { start: 'Today', end: '(>= 6 months)'},
+                period: { start: 'Immediately', end: '(>= 6 months)'},
                 title: 'Looking for a new freelance mission',
                 icon: 'fa fa-exclamation-triangle text-warning',
             },
