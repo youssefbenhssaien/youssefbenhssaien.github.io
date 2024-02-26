@@ -467,7 +467,7 @@ const aboutSectionComponent = {
                 <div class="col-md-3 col-md-offset-3 text-left">
                     <div class="photo-profile-container mb-3"><img src="assets/img/profile.jpg" class="photo-profile" /></div>
                     <div class="clearfix visible-xxs"></div>
-                    <router-link :to="{ name: 'resume', }" class="btn btn-border m-1 text-left" style="width: 100%">
+                    <router-link :to="{ name: 'resume' }" class="btn btn-border m-1 text-left" style="width: 100%">
                         <i class="fa fa-file-alt"></i> My resume
                     </router-link>
                     <router-link :to="'#certifications'" class="btn btn-border m-1 text-left" style="width: 100%">
@@ -591,7 +591,7 @@ const router = VueRouter.createRouter({
     routes,
     history: VueRouter.createWebHistory(),
     scrollBehavior(to, from, savedPosition) {
-        return { el: to.hash ? to.hash : '#main', behavior: 'smooth', };
+        return { el: to.hash ? to.hash : '#main', behavior: 'smooth', top: to.hash ? 90 : null };
     },
 });
 app.use(router);
