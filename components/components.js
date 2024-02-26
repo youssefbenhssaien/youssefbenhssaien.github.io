@@ -466,14 +466,14 @@ const aboutSectionComponent = {
                 <div class="col-md-3 col-md-offset-3">
                     <div class="photo-profile-container"><img src="assets/img/profile.jpg" class="photo-profile" /></div>
                     <div class="clearfix visible-xxs"></div>
-                    <router-link :to="{ name: 'skills', }" class="btn btn-border m-1 mt-3">
+                    <router-link :to="'#skills'" class="btn btn-border m-1 mt-3">
                         <i class="fa fa-code"></i> My skills
-                    </router-link>
-                    <router-link :to="'#certifications'" class="btn btn-border m-1">
-                        <i class="fa fa-award"></i> My certifications
                     </router-link>
                     <router-link :to="{ name: 'resume', }" class="btn btn-border m-1">
                         <i class="fa fa-th-list"></i> My experience
+                    </router-link>
+                    <router-link :to="'#certifications'" class="btn btn-border m-1">
+                        <i class="fa fa-award"></i> My certifications
                     </router-link>
                 </div>
                 <div class="col-md-9 col-md-offset-3">
@@ -499,7 +499,8 @@ const aboutSectionComponent = {
             </div>
         </div>
     </section>
-    <certification-section class="mt-3" />`,
+    <certification-section class="mt-3" />
+    <skill-section class="mt-3" />`,
 };
 app.component('about-section', aboutSectionComponent);
 
