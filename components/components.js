@@ -468,7 +468,7 @@ const aboutSectionComponent = {
                     <div class="photo-profile-container mb-3"><img src="assets/img/profile.jpg" class="photo-profile" /></div>
                     <div class="clearfix visible-xxs"></div>
                     <router-link :to="{ name: 'resume', }" class="btn btn-border m-1 text-left" style="width: 100%">
-                        <i class="fa fa-th-list"></i> My resume
+                        <i class="fa fa-file-alt"></i> My resume
                     </router-link>
                     <router-link :to="'#certifications'" class="btn btn-border m-1 text-left" style="width: 100%">
                         <i class="fa fa-award"></i> My certifications
