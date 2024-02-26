@@ -457,7 +457,8 @@ const aboutSectionComponent = {
     data() {
         return data;
     },
-    template: `<section id="about" class="site-section section-services text-center">
+    template: `<div>
+    <section id="about" class="site-section section-services text-center">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -501,7 +502,8 @@ const aboutSectionComponent = {
         </div>
     </section>
     <certification-section class="mt-3" />
-    <skill-section class="mt-3" />`,
+    <skill-section class="mt-3" />
+    </div>`,
 };
 app.component('about-section', aboutSectionComponent);
 
