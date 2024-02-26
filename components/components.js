@@ -465,9 +465,9 @@ const aboutSectionComponent = {
                     <img src="assets/img/lines.svg" class="img-lines" alt="lines">
                 </div>
                 <div class="col-md-3 col-md-offset-3">
-                    <div class="photo-profile-container"><img src="assets/img/profile.jpg" class="photo-profile" /></div>
+                    <div class="photo-profile-container mb-3"><img src="assets/img/profile.jpg" class="photo-profile" /></div>
                     <div class="clearfix visible-xxs"></div>
-                    <router-link :to="'#skills'" class="btn btn-border m-1 mt-3">
+                    <router-link :to="'#skills'" class="btn btn-border m-1">
                         <i class="fa fa-code"></i> My skills
                     </router-link>
                     <router-link :to="{ name: 'resume', }" class="btn btn-border m-1">
