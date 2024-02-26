@@ -457,28 +457,30 @@ const aboutSectionComponent = {
         return data;
     },
     template: `<section id="about" class="site-section section-services text-center">
-        <div class="container" style="background: url('assets/img/skills.jpg') no-repeat right fixed;">
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="photo-profile-container"><img src="assets/img/profile.jpg" class="photo-profile" /></div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-12">
+                    <h3>Who i am</h3>
+                    <img src="assets/img/lines.svg" class="img-lines" alt="lines">
                 </div>
-                <div class="col-md-6 col-md-offset-3">
-                    <h1>Youssef BENHSSAIEN</h1>
-                    <div class="console-container my-4">
-                        <div class="console-title">{{ title }}</div>
-                        <div class="console-body">$ <span class="typed" :data-strings="introduction"></span></div>
-                    </div>
+                <div class="col-md-3 col-md-offset-3">
+                    <div class="photo-profile-container"><img src="assets/img/profile.jpg" class="photo-profile" /></div>
                     <div class="clearfix visible-xxs"></div>
+                    <router-link :to="{ name: 'skills', }" class="btn btn-border m-1 mt-3">
+                        <i class="fa fa-code"></i> My skills
+                    </router-link>
                     <router-link :to="{ name: 'resume', }" class="btn btn-border m-1">
                         <i class="fa fa-th-list"></i> My experience
                     </router-link>
-                    <router-link :to="{ name: 'skills', }" class="btn btn-border m-1">
-                        <i class="fa fa-code"></i> My skills
-                    </router-link>
+                </div>
+                <div class="col-md-9 col-md-offset-3">
+                    <div class="console-container my-4">
+                        <div class="console-title">{{ title }}</div>
+                        <div class="console-body"><span class="typed" :data-strings="introduction"></span></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container my-3">
+            <div class="clearfix separator"></div>
             <div class="row">
                 <div class="col-md-12">
                     <h3>What i do</h3>

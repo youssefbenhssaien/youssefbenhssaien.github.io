@@ -229,8 +229,8 @@ html, body {
     text-align: right;
 }
 .photo-profile {
-    width: 250px;
-    height: 250px;
+    width: auto;
+    height: 200px;
     border-radius: 50%;
     box-shadow: 0px 0px 5px 5px rgb(0 0 0 / 30%);
 }
@@ -536,10 +536,9 @@ a.icon-up-bg:hover {color: #212121;}
 
 .console-container {
     display: block;
-    margin: auto;
-    max-width: 530px;
+    margin-right: auto;
     border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 80%) 0px 10px 50px;
+    box-shadow: rgb(0 0 0 / 80%) 0 10px 50px;
     clear: both;
     overflow: hidden;
     -webkit-transition: all 0.5s ease-out;
@@ -577,4 +576,9 @@ a.icon-up-bg:hover {color: #212121;}
     -ms-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
+}
+.separator {
+    background: #555;
+    height: 2px;
+    margin: 50px auto;
 }

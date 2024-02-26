@@ -1,15 +1,19 @@
 const data = {
     title: 'Senior Full Stack PHP/Javascript Developer',
-    introduction: 'Hello! I\'m Youssef, a Full-stack developer, a PHP enthusiast, and a guy slighty obsessed for code quality.',
+    introduction: 'Hello !<br/>' +
+        'I\'m <b>Youssef BENHSSAIEN.</b><br/>' +
+        '<b>Symfony</b> 5/6 and <b>PHP</b> 7 certified with 10+ years of web development experience with a career spanning 14 years in PHP.<br/>' +
+        'I am committed to delivering innovative solutions and tackling challenges with creativity and precision.<br/>' +
+        'Passionate about crafting innovative solutions and seeking new challenges to grow further in the field.',
     location: 'Toulouse, France',
     cvs: [
         { label: 'EN', href: 'mailto:youssef.benhssaien@gmail.com?subject=From youssefbenhssaien.me - CV download', img: '/assets/img/lang/en.png' },
         { label: 'FR', href: 'mailto:youssef.benhssaien@gmail.com?subject=Source youssefbenhssaien.me - demande de CV', img: '/assets/img/lang/fr.png' },
     ],
     services: [
-        { label: 'Back-end', description: 'Utilising php frameworks such as Symfony or creating bespoke code, I\'ve written services supporting thousands of users, including REST APIs, e-learning applications and more.', img: 'assets/img/back-end.svg', alt: 'Back End Developer' },
-        { label: 'Front-end', description: 'As a javascript developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript frameworks such as VueJs/ReactJs/Angular', img: 'assets/img/front-end.svg', alt: 'Front End Developer' },
-        { label: 'Problem Solving', description: 'As a senior developer, solving problems needs more than writing code and getting results.<br />Design patterns, software architecture, performance, budget, target and understanding the big picture what yield results', img: 'assets/img/consultancy.svg', alt: 'Coding' },
+        { label: 'Backend', description: 'My experience focuses on <b>PHP</b> and <b>Symfony</b> development, where I specialize in creating robust and scalable server-side solutions.<br/>With a deep understanding of database management and employing software architecture principles such as <b>microservices</b> and <b>hexagonal</b> architecture, I ensure seamless functionality and optimal performance for web applications.<br/>From designing efficient <b>APIs</b> to implementing complex business logic, I am dedicated to delivering backend systems that meet the highest standards of reliability and efficiency.', img: 'assets/img/back-end.svg', alt: 'Back End Developer' },
+        { label: 'Frontend', description: 'On the frontend, I excel in crafting engaging user experiences through cutting-edge technologies such as <b>HTML</b>, <b>CSS</b> (including frameworks such as <b>Bootstrap</b> and <b>TailwindCss</b>), and <b>JavaScript</b> frameworks like <b>Vue</b> and <b>React</b>.<br/>With a keen eye for design and usability, I transform concepts into visually stunning and intuitive interfaces.<br/>From responsive layouts to interactive elements, I focus on delivering frontend solutions that captivate users and elevate the overall user experience.', img: 'assets/img/front-end.svg', alt: 'Front End Developer' },
+        { label: 'Problem Solving', description: 'Beyond coding, I thrive on solving <b>complex</b> problems and overcoming technical challenges.<br/>Whether it\'s <b>optimizing performance</b> bottlenecks, troubleshooting <b>bugs</b>, or <b>refactoring</b> and <b>migrating</b> from legacy to new technologies, I approach every obstacle with a strategic mindset and a relentless drive for excellence.<br/>Through effective problem-solving techniques and a collaborative approach, I ensure that projects are <b>delivered on time</b> and exceed expectations.', img: 'assets/img/consultancy.svg', alt: 'Coding' },
     ],
     certifs: [
         { label: 'Zend Certified PHP Engineer (2017-PHP)', img: '/assets/img/certif/certif-php.gif', href: 'https://www.zend-zce.com/en/yellow-pages/ZEND032239' },
