@@ -577,7 +577,7 @@ const routes = [
 
 const router = VueRouter.createRouter({
     routes,
-    history: VueRouter.createWebHashHistory(),
+    history: VueRouter.createWebHistory(),
     scrollBehavior(to, from, savedPosition) {
         return { el: to.hash ? to.hash : '#main', behavior: 'smooth', };
     },
