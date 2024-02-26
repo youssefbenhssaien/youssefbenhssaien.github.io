@@ -460,7 +460,7 @@ const aboutSectionComponent = {
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-12">
-                    <h3>Who i am</h3>
+                    <h3>Who I am</h3>
                     <img src="assets/img/lines.svg" class="img-lines" alt="lines">
                 </div>
                 <div class="col-md-3 col-md-offset-3">
@@ -468,6 +468,9 @@ const aboutSectionComponent = {
                     <div class="clearfix visible-xxs"></div>
                     <router-link :to="{ name: 'skills', }" class="btn btn-border m-1 mt-3">
                         <i class="fa fa-code"></i> My skills
+                    </router-link>
+                    <router-link :to="'#certifications'" class="btn btn-border m-1">
+                        <i class="fa fa-award"></i> My certifications
                     </router-link>
                     <router-link :to="{ name: 'resume', }" class="btn btn-border m-1">
                         <i class="fa fa-th-list"></i> My experience
@@ -483,7 +486,7 @@ const aboutSectionComponent = {
             <div class="clearfix separator"></div>
             <div class="row">
                 <div class="col-md-12">
-                    <h3>What i do</h3>
+                    <h3>What I do</h3>
                     <img src="assets/img/lines.svg" class="img-lines" alt="lines">
                 </div>
                 <div class="col-sm-4" v-for="row in services">
@@ -495,7 +498,8 @@ const aboutSectionComponent = {
                 </div>
             </div>
         </div>
-    </section>`,
+    </section>
+    <certification-section class="mt-3" />`,
 };
 app.component('about-section', aboutSectionComponent);
 
@@ -564,7 +568,6 @@ app.component('contact-section', contactSectionComponent);
 
 const routes = [
     { path:'/', name:'about', component: aboutSectionComponent, meta: { transition: 'slide-left' }, },
-    { path: '/certifications', name:'certifications', component: certificationSectionComponent, meta: { transition: 'slide-left' } },
     { path: '/skills', name:'skills', component: skillSectionComponent, meta: { transition: 'slide-left' } },
     { path: '/resume', name:'resume', component: resumeSectionComponent, meta: { transition: 'slide-left' } },
     { path: '/contact', name:'contact', component: contactSectionComponent, meta: { transition: 'slide-left' } },
