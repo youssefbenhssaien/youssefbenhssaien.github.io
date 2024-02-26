@@ -280,7 +280,7 @@ html, body {
     z-index: 0;
 }
 
-.section-services .container {
+.site-section .container {
     padding: 50px 100px;
     position: relative;
     background-color: #fff;

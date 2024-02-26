@@ -234,7 +234,7 @@ const timelineFormationComponent = {
 };
 app.component('timeline-formation', timelineFormationComponent);
 
-const resumeSectionComponent = {
+const resumePage = {
     data() {
         return data;
     },
@@ -298,7 +298,7 @@ const resumeSectionComponent = {
         </section><!-- /.section-form -->
     `,
 };
-app.component('resume-section', resumeSectionComponent);
+app.component('resume-section', resumePage);
 
 const cvDownloadComponent = {
     props:  {
@@ -457,8 +457,7 @@ const aboutSectionComponent = {
     data() {
         return data;
     },
-    template: `<div>
-    <section id="about" class="site-section section-services text-center">
+    template: `<section id="about" class="site-section section-services text-center">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -476,6 +475,9 @@ const aboutSectionComponent = {
                     </router-link>
                     <router-link :to="'#certifications'" class="btn btn-border m-1">
                         <i class="fa fa-award"></i> My certifications
+                    </router-link>
+                    <router-link :to="'#contact'" class="btn btn-border m-1">
+                        <i class="fa fa-envelope"></i> Contact
                     </router-link>
                 </div>
                 <div class="col-md-9 col-md-offset-3">
@@ -500,10 +502,7 @@ const aboutSectionComponent = {
                 </div>
             </div>
         </div>
-    </section>
-    <certification-section class="mt-3" />
-    <skill-section class="mt-3" />
-    </div>`,
+    </section>`,
 };
 app.component('about-section', aboutSectionComponent);
 
@@ -546,7 +545,7 @@ const contactSectionComponent = {
         };
     },
     template: `
-        <section id="contact" class="contact site-section section-form text-center">
+        <section id="contact" class="contact site-section text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -570,11 +569,22 @@ const contactSectionComponent = {
 };
 app.component('contact-section', contactSectionComponent);
 
+const indexPage = {
+    data() {
+        return data;
+    },
+    template: `<div>
+        <about-section class="mt-3" />
+        <certification-section class="mt-3" />
+        <skill-section class="mt-3" />
+        <contact-section class="mt-3" />
+    </div>`,
+};
+app.component('index', indexPage);
+
 const routes = [
-    { path:'/', name:'about', component: aboutSectionComponent, meta: { transition: 'slide-left' }, },
-    { path: '/skills', name:'skills', component: skillSectionComponent, meta: { transition: 'slide-left' } },
-    { path: '/resume', name:'resume', component: resumeSectionComponent, meta: { transition: 'slide-left' } },
-    { path: '/contact', name:'contact', component: contactSectionComponent, meta: { transition: 'slide-left' } },
+    { path:'/', name:'about', component: indexPage, meta: { transition: 'slide-left' }, },
+    { path: '/resume', name:'resume', component: resumePage, meta: { transition: 'slide-left' } },
 ];
 
 const router = VueRouter.createRouter({
