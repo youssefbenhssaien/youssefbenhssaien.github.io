@@ -414,6 +414,7 @@ const skillSectionComponent = {
                         <div class="word-cloud" style="width: 100%; height: 400px" :data-tags="skillsFromExperiencesToString('Technical environment')"></div>
                     </div>
                 </div>
+                <div class="clearfix separator"></div>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="row">
