@@ -546,6 +546,7 @@ a.icon-up-bg:hover {color: #212121;}
     -ms-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
+    height: 100%;
 }
 .console-container .console-title {
     padding: 5px 0;
@@ -576,6 +577,7 @@ a.icon-up-bg:hover {color: #212121;}
     -ms-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
+    height: 100%;
 }
 .separator {
     background: #555;

@@ -459,7 +459,7 @@ const aboutSectionComponent = {
     },
     template: `<section id="about" class="site-section section-services text-center">
         <div class="container">
-            <div class="row justify-content-center align-items-center">
+            <div class="row justify-content-center">
                 <div class="col-md-12">
                     <h3>Who I am</h3>
                     <img src="assets/img/lines.svg" class="img-lines" alt="lines">
@@ -478,7 +478,7 @@ const aboutSectionComponent = {
                     </router-link>
                 </div>
                 <div class="col-md-9 col-md-offset-3">
-                    <div class="console-container my-4">
+                    <div class="console-container">
                         <div class="console-title">{{ title }}</div>
                         <div class="console-body"><span class="typed" :data-strings="introduction"></span></div>
                     </div>

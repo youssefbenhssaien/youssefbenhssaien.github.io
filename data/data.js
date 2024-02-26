@@ -1,10 +1,10 @@
 const data = {
     title: 'Senior Full Stack PHP/Javascript Developer',
-    introduction: 'Hello !<br/>' +
-        'I\'m <b>Youssef BENHSSAIEN.</b><br/>' +
-        '<b>Symfony</b> 5/6 and <b>PHP</b> 7 certified with 10+ years of web development experience with a career spanning 14 years in PHP.<br/>' +
-        'I am committed to delivering innovative solutions and tackling challenges with creativity and precision.<br/>' +
-        'Passionate about crafting innovative solutions and seeking new challenges to grow further in the field.',
+    introduction: '$ Hello !<br/>' +
+        '$ I\'m <b>Youssef BENHSSAIEN.</b><br/>' +
+        '$ <b>Symfony</b> 5/6 and <b>PHP</b> 7 certified with 10+ years of web development experience with a career spanning 14 years in PHP.<br/>' +
+        '$ I am committed to delivering innovative solutions and tackling challenges with creativity and precision.<br/>' +
+        '$ Passionate about crafting innovative solutions and seeking new challenges to grow further in the field.',
     location: 'Toulouse, France',
     cvs: [
         { label: 'EN', href: 'mailto:youssef.benhssaien@gmail.com?subject=From youssefbenhssaien.me - CV download', img: '/assets/img/lang/en.png' },
