@@ -571,33 +571,46 @@ const announcementSection = {
             announce: Object.values(data.experiences).filter((experience) => experience.type === 'announcement')[0],
         };
     },
+    mounted() {
+        setTimeout(() => {
+            const modal = $('#announcement_modal');
+            if (modal) {
+                $('body').append(modal);
+                modal.modal();
+            }
+        }, 1000);
+    },
     template: `
-        <section class="site-section announcement" v-if="announce && announce.show">
-            <div class="container p-0">
-                <div class="alert alert-warning alert-dismissible fade show p-0" role="alert">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="assets/img/announcement.png" />
-                        </div>
-                        <div class="col-md-9 my-2">
-                          <h1 class="announcement-title">{{ announce.title }}</h1>
-                          <div>
-                              <div><strong>Position:</strong> {{ announce.client.name }}</div>
-                              <div><strong>Location:</strong> {{ announce.mission.location }}</div>
-                              <div><strong>Availability:</strong> {{ announce.mission.period.start }}</div>
-                              <div v-for="(tags, title) in announce.tags">
-                                <tags :title="title" :tags="tags" />
-                              </div>
-                          </div>
-                          <div class="alert alert-danger m-1">
-                              Do you have or want to share an opportunity ? <router-link to="#contact">Lets get in touch !</router-link>
-                          </div>
-                        </div>
-                    </div>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+        <section class="site-section text-center" id="announcement" v-if="announce && announce.show">
+            <div style="position: relative;z-index: 1;">
+                <button type="button" class="btn btn-link alert alert-danger" data-toggle="modal" data-target="#announcement_modal">{{ announce.title }}</button>
+            </div>
+            <div class="modal fade" id="announcement_modal" tabindex="-1" role="dialog">
+              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
                     </button>
+                    <div class="site-section announcement">
+                      <div class="text-center"><h1 class="announcement-title">{{ announce.title }}</h1></div>
+                      <div><strong>Position:</strong> {{ announce.client.name }}</div>
+                      <div><strong>Location:</strong> {{ announce.mission.location }}</div>
+                      <div><strong>Availability:</strong> {{ announce.mission.period.start }}</div>
+                      <div v-for="(tags, title) in announce.tags">
+                        <tags :title="title" :tags="tags" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer text-center">
+                    <span class="alert alert-danger mx-auto">Do you have or want to share an opportunity ?</span>
+                    <div class="mx-auto mt-1">
+                        <router-link to="#contact" data-dismiss="modal" class="btn btn-primary m-1">Lets get in touch !</router-link> 
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No I want just to take a look !</button>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
         </section>`,
 }
@@ -607,13 +620,13 @@ const indexPage = {
     data() {
         return data;
     },
-    template: `<div>
+    template: `<section>
         <announcement-section class="mt-3" />
         <about-section class="mt-3" />
         <certification-section class="mt-3" />
         <skill-section class="mt-3" />
         <contact-section class="mt-3" />
-    </div>`,
+    </section>`,
 };
 app.component('index', indexPage);
 

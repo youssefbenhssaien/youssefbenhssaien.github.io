@@ -70,10 +70,6 @@
 
 	/* SITEMAIN
 	================================================== */
-	.site-section {
-		padding-top: 90px;
-	}
-
 	.section-skills,
 	.section-portfolio,
 	.section-form {
@@ -93,11 +89,6 @@
 
 	.skill h4 {
 		font-size: 22px;
-	}
-
-	/* Section: Services */
-	.section-services{
-		padding-top: 200px;
 	}
 
 	.section-services .container {
@@ -320,11 +311,6 @@
 		margin-bottom: 140px;
 	}
 
-	/* site-section */
-	.site-section {
-	   padding-top: 60px;
-	}
-
 	.section-skills,
 	.section-portfolio,
 	.section-form {
@@ -348,11 +334,6 @@
 	.skill h4 {
 	    text-transform: uppercase;
 	    margin-bottom: 10px;
-	}
-
-	/* Section: Services */
-	.section-services {
-		padding-top: 180px;
 	}
 
 	.service h4 {
