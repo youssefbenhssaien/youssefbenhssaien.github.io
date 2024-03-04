@@ -403,6 +403,7 @@ const skillSectionComponent = {
             <div class="container">
                 <div class="text-center">
                     <h3>My Skills</h3>
+                    <h6 class="text-danger">(Auto-generated from resume)</h6>
                     <img src="assets/img/lines.svg" class="img-lines" alt="lines">
                 </div>
                 <div class="row justify-content-center mb-3">
