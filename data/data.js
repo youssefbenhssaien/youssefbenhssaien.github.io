@@ -67,7 +67,7 @@ const data = {
     experiences: {
         '2024-02-01': {
             type: 'announcement',
-            show: true,
+            show: false,
             title: '🚀 Looking for a New Freelance Mission! 🚀',
             client: {
                 name: 'Senior PHP/Symfony developer / Full-Stack developer / Lead developer',
